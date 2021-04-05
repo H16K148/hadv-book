@@ -1,0 +1,7 @@
+#!/bin/bash
+docker run --rm -it \
+  -e HADV_NAME_PREFIX=${HADV_NAME_PREFIX} \
+  -v "${LOCAL_WORKSPACE_FOLDER}:/src" \
+  -v "/var/run/docker.sock:/var/run/docker.sock" \
+  -p 1313:1313 \
+  h16k148/hadv-hugo:latest "$@"

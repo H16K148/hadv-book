@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  hadv-asciidoctor-sv:
+    container_name: ${HADV_NAME_PREFIX}-hadv-asciidoctor
+    image: h16k148/hadv-asciidoctor:latest
+    tty: true
+    init: true
+    build: 
+      context: ./hadv-asciidoctor
+      dockerfile: Dockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ..:/documents
+    env_file:
+      - .env

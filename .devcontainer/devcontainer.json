@@ -1,0 +1,36 @@
+{
+  "name": "${localWorkspaceFolderBasename}",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "hadv-asciidoctor-sv",
+  "workspaceFolder": "/documents",
+  "settings": { 
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "asciidoctor.asciidoctor-vscode",
+    "tamasfe.even-better-toml",
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+    "donjayamanne.githistory",
+    "oderwat.indent-rainbow",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "visualstudioexptteam.vscodeintellicode",
+    "ics.japanese-proofreading",
+    "jebbs.plantuml",
+    "yog.yog-plantuml-highlight"
+  ],
+  "initializeCommand":[
+    "docker",
+    "build",
+    "-t",
+    "h16k148/hadv-hugo:latest",
+    "-f",
+    ".devcontainer/hadv-hugo/Dockerfile",
+    "."
+  ],
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "COMPOSE_FORCE_WINDOWS_HOST": "true"
+  }
+}
