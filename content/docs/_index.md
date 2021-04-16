@@ -47,7 +47,7 @@ cascade:
   ## (Optional) If you have enabled BookComments for the site, you can disable it for specific pages.
   bookComments: false
   ## (Optional) Set to 'false' to exclude page from search index.
-  bookSearchExclude: true
+  bookSearchExclude: false
 - _target:
     kind: section
     path: /docs/**
@@ -95,5 +95,5 @@ cascade:
   ## (Optional) If you have enabled BookComments for the site, you can disable it for specific pages.
   bookComments: false
   ## (Optional) Set to 'false' to exclude page from search index.
-  bookSearchExclude: true
+  bookSearchExclude: false
 ---
