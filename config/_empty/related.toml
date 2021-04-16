@@ -1,0 +1,10 @@
+##### https://gohugo.io/content-management/related/#configure-related-content
+#includeNewer = false
+#threshold = 80
+#toLower = false
+#[[indices]]
+#  name = "keywords"
+#  weight = 100
+#[[indices]]
+#    name = "date"
+#    weight = 10

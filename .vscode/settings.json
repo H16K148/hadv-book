@@ -1,0 +1,9 @@
+{
+  "asciidoc.asciidoctor_command": "asciidoctor -r asciidoctor-diagram -a skip-front-matter",
+  "asciidoc.asciidoctorpdf_command": "asciidoctor-pdf -r asciidoctor-diagram -r /documents/asciidoctor/pdf/theme-business-001/prawn-svg-config.rb -a skip-front-matter",
+  "asciidoc.enableErrorDiagnostics": false,
+  "asciidoc.use_asciidoctor_js": false,
+  "asciidoc.use_asciidoctorpdf": true,
+  "asciidoc.preview.useEditorStyle": false,
+  "asciidoc.trace": "verbose"
+}

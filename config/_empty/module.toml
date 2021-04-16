@@ -1,0 +1,10 @@
+##### https://gohugo.io/hugo-modules/configuration/
+#noProxy = "none"
+#noVendor = ""
+#private = "*.*"
+#proxy = "direct"
+#replacements = ""
+#[hugoVersion]
+#  extended = false
+#  max = ""
+#  min = ""

@@ -1,5 +1,5 @@
 #!/bin/bash
-_LOG_FPATH="/src/.logs/hugo.log"
+_LOG_FPATH="/src/.logs/hugo-asciidoctor.log"
 _DATE_TIME=$(TZ=UTC-9 date "+%Y/%m/%d %H:%M:%S.%N")
 _CONTAINER_NAME="${HADV_NAME_PREFIX}-hadv-asciidoctor"
 if [ ! -d "${_LOG_FPATH%/*}" ]; then mkdir -p "${_LOG_FPATH%/*}"; fi

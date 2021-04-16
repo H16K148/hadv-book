@@ -1,0 +1,27 @@
+{{ $tmpNotFirstTaxonomy := false }}
+{{ range $term, $_ := .Site.Taxonomies }}
+  {{ with $.Site.GetPage (printf "/%s" $term | urlize) }}
+    {{ $tmpPageCount := len .Pages }}
+    {{ if gt $tmpPageCount 0 }}
+      {{ if $tmpNotFirstTaxonomy }}
+<hr style="margin: 1.5em 0px;">
+      {{ end }}
+      {{ $tmpNotFirstTaxonomy = true }}
+<nav>
+  <strong>{{ .Title | title }}</strong>
+  <ul>
+    <li class="book-section-flat">
+      <ul>
+      {{ range .Pages.ByTitle }}
+        <li class="flex justify-between">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span>{{ len .Pages }}</span>
+        </li>
+      {{ end }}
+      </ul>
+    </li>
+  </ul>
+</nav>
+    {{ end }}
+  {{ end }}
+{{ end }}

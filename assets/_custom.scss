@@ -1,0 +1,84 @@
+/* You can add custom styles here. */
+
+// プラグイン
+// @import "plugins/numbered";
+@import "plugins/scrollbars";
+
+// fontawesome
+@import "./fontawesome/fontawesome.scss";
+@import "./fontawesome/solid.scss";
+@import "./fontawesome/brands.scss";
+
+// AsciiDoc スタイル
+@import "asciidoc/hugo-adoc-colony";
+
+// カスタム CSS //
+// ヘッダーサイズ設定
+.markdown h1 {
+  position: relative;
+  padding: 0.25em 0;
+}
+.markdown h1:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, #ccc, transparent);
+  background: linear-gradient(to right, #ccc, transparent);
+}
+.markdown h2 {
+  background-color: #f3f3f3;
+  border-bottom: solid 1px #ddd;
+  padding: 0.20em 0.5em;
+}
+.markdown h3 {
+  position: relative;
+  padding: 0.15em 0.5em;
+  background: -webkit-linear-gradient(to right, #e9e9e9, transparent);
+  background: linear-gradient(to right, #e9e9e9, transparent);
+}
+.markdown h4 {
+  padding: 0.1em 0.25em;
+  border-bottom: dashed 1px #e6e6e6;
+}
+// パンくずリスト設定
+div.breadcrumb-shell {
+  margin-top: 3px;
+  text-align: left;
+}
+div.breadcrumb-shell > ol.breadcrumb {
+  padding: 0;
+  margin: 0em 0em 1em 0em;
+}
+div.breadcrumb-shell > ol.breadcrumb li {
+  display: inline;
+  list-style: none;
+}
+div.breadcrumb-shell > ol.breadcrumb li:not(:last-child)::after {
+  content: '>';
+  padding: 0 0.5em;
+}
+// 目次の文字サイズ設定
+aside.book-toc {
+  font-size: 0.875rem;
+}
+// copyright 用フッター設定
+body > main footer.book-footer {
+  padding-bottom: 2em;
+}
+body > footer {
+  position: fixed;
+  background-color: #e9e9e9;
+  border-top: solid 1px #ddd;
+  width: 100%;
+  bottom:0;
+}
+body > footer div.copyright {
+  padding: 1em 0.5em;
+  width: 100%;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+aside nav ul li {
+  margin: 0.5em 0em;
+}

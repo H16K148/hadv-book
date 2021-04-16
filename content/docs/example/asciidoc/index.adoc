@@ -1,0 +1,376 @@
+---
+###### Hugo Predefined
+###### https://gohugo.io/content-management/front-matter/
+#aliases:       # Set on each page
+#audio:         # Set on each page
+date: 2021-04-09T00:00:00+09:00
+description: "AsciiDoc の実例ページ集"
+#draft: true
+#expiryDate:    # Set on each page 
+#headless:      # Set on each page
+#images:        # Set on each page
+isCJKLanguage: true
+keywords:
+  - hadv
+#layout:        # Set on each page
+#lastmod:       # Set on each page
+#linkTitle:     # Set on each page
+#markup:        # Set on each page
+#outputs:       # Set on each page
+#publishDate:   # Set on each page
+#resources:     # Set on each page
+#series:        # Set on each page
+#slug:          # Set on each page
+summary: "AsciiDoc の実例ページ"
+title: "AsciiDoc"
+type: "docs"
+#url:           # Set on each page
+#videos:        # Set on each page
+weight: 20
+## <taxonomies>
+categories: ["example"]
+tags: []
+###### Hugo Book Theme Defined
+###### https://themes.gohugo.io/hugo-book/
+## See /content/docs/_index.md
+## (Optional) Set to 'true' to mark page as flat section in file-tree menu (if BookMenuBundle not set)
+#bookFlatSection: false
+## (Optional) Set to hide nested sections or pages at that level. Works only with file-tree menu mode
+#bookCollapseSection: false
+## (Optional) Set true to hide page or section from side menu (if BookMenuBundle not set)
+#bookHidden: false
+## (Optional) Set 'false' to hide ToC from page
+#bookToC: true
+## (Optional) If you have enabled BookComments for the site, you can disable it for specific pages.
+#bookComments: false
+## (Optional) Set to 'false' to exclude page from search index.
+#bookSearchExclude: true
+---
+// 各種パスの設定 //
+// for html5 (Hugo)
+ifeval::["{backend}{ssg}" == "html5hugo"]
+:icons: font
+:imagesdir: ./
+:source-highlighter: rouge
+:rouge-css: style
+:rouge-style: pastie
+endif::[]
+// for html5 Preview (VSCode Preview)
+ifeval::["{backend}{ssg}" == "html5"]
+:stylesdir: /documents/asciidoctor/html/theme-business-001/styles
+:stylesheet: adoc-colony.css
+:icons: font
+:imagesdir: ./
+:source-highlighter: rouge
+:rouge-css: style
+:rouge-style: pastie
+endif::[]
+// for pdf
+ifeval::["{backend}" == "pdf"]
+:imagesdir: ./
+:source-highlighter: rouge
+:rouge-style: pastie
+:doctype: book
+:scripts: cjk
+:pdf-themesdir: /documents/asciidoctor/pdf/theme-business-001
+:pdf-theme: ./default-theme.yml
+:pdf-fontsdir: /documents/asciidoctor/pdf/fonts,/documents/asciidoctor/pdf/theme-business-001/fonts
+endif::[]
+// 目次の設定 //
+:toc: right
+:toclevels: 4
+:toc-title: 目次
+// 各種ラベルの設定 //
+:chapter-label:
+:example-caption: 例
+:table-caption: 表
+:figure-caption: 図
+:appendix-caption: 付録
+:listing-caption: リスト
+// その他設定 //
+:experimental:
+// 文書のステータス //
+:localdate: 2021-02-18
+:revnumber: 0.0.1
+:revdate: 2021/02/18
+// タイトル //
+// for html5
+ifeval::["{backend}" == "html5"]
+:showtitle:
+= AsciiDoc 執筆環境構築
+H16K148 <h16k148@gmail.com>
+endif::[]
+// for pdf
+ifeval::["{backend}" == "pdf"]
+= ^Windows10における^ AsciiDoc 執筆環境構築
+H16K148 <h16k148@gmail.com>
+endif::[]
+
+:sectnums!:
+== はじめに
+
+この文書では、Windows10 環境において、Asciidoctor の https://github.com/asciidoctor/docker-asciidoctor[公式Dockerイメージ]を中心に、
+VSCodeの拡張機能 https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode[「AsciiDoc」]と
+https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers[「Remote - Containers」]を用いた
+AsciiDoc 執筆環境の構築方法などを紹介します。
+
+NOTE: このドキュメントは Asciidoc で書かれています。背景を白くした方が見やすいです。
+
+=== [参考] その他のドキュメント執筆環境について
+これまで使用してきた様々な形式のドキュメントについて経験したことの一端を書き残しますが、興味がなければスルーしてください。
+
+.MS Excel/Word を使った経験から…（クリックで開きます）
+[%collapsible]
+====
+* 個人としての使用感について
+** icon:plus-square[role="green"] 機能が豊富で、やりたいことに困らない。
+** icon:minus-square[role="red"] 書き込む情報量が多くなるとアプリケーションが重くなる。
+* チームとしての使用感について
+** icon:minus-square[role="red"] 複数人で同じファイルを使用する場合、ロックしたまま放置されることがある。
+* トラブルについて
+** icon:minus-square[role="red"] 簡単に削除できてしまい、削除されたデータは簡単には戻らない。
+* 品質について
+** icon:plus-square[role="green"] 多くの校正を経て作られた一点ものの資料は美しい。
+** icon:minus-square[role="red"] 編集者の Excel/Word スキルがそのまま反映され、品質がバラバラになる。
+** icon:minus-square[role="red"] 資料の変更箇所のハイライトが残されたまま放置される。
+** icon:minus-square[role="red"] Excel のセル内に書かれた文字列は、見たままに印刷されない。
+* 互換ソフトの存在について
+** icon:plus-square[role="green"] 購入コストが削減できる。
+** icon:minus-square[role="red"] 作業コストが上がる。
+** icon:minus-square[role="red"] 完全互換でないため、マクロや VBA が使えなくなる。また、作れなくなる。
+** icon:minus-square[role="red"] Excel/Word と互換ソフトが混在する場合、非互換部分が悪影響を及ぼして、保存するたびに壊れていく（スタイルなど）。
+** icon:minus-square[role="red"] 外部から入手したマクロ/VBA ツールなどを正常に動かすために、MS Excel/Word がインストールされている環境にファイルを移動して作業することになり、余計な時間がかかる。
+* 履歴管理について
+** icon:minus-square[role="red"] ドキュメント内に「更新履歴ページ」を作り履歴管理をすると、それ自体の更新を忘れることがある。
+** icon:minus-square[role="red"] 「更新履歴ページ」に書かれていることがすべてであり、それ以上の履歴を追うことができない。
+** icon:minus-square[role="red"] ファイルの移動/コピーが簡単であるためか、他部署により有用な資料が持ち出され、様々な派生バージョン（外部向け資料など）が出来上がる（最初に書いた人が誰なのかも分からなくなる）。
+** icon:minus-square[role="red"] ファイルをリネームして過去世代のデータを残すも、リネームの命名規則が守られない。
+====
+
+<<<
+
+.Wiki System を使った経験から…（クリックで開きます）
+[%collapsible]
+====
+* 個人としての使用感について
+** icon:minus-square[role="red"] Web の TextArea に入力するため、通常のテキストエディタの機能にも劣る。
+** icon:minus-square[role="red"] 書きながらプレビューできないため、Wiki 書式を身につけなければ使いづらいところにハードルがあり、利用者が限られていく。
+** icon:minus-square[role="red"] 書きながらプレビューできないため、途中で壊れたことに気付きづらい。
+** icon:minus-square[role="red"] 他形式（pdf など）への変換ができず、Web サーバに接続可能な環境でなければ使うことができない。
+** icon:minus-square[role="red"] 使える書式が少なすぎる。
+* チームとしての使用感について
+** icon:plus-square[role="green"] ドキュメントが１箇所にまとまる（別の形式を併用しない限り）。
+** icon:minus-square[role="red"] 複数人で作業していてもロックはされないが、衝突した場合、Web ページ上でマージしなければならない。
+** icon:minus-square[role="red"] メンバーが積極的に利用し続けないと、あっという間に情報は古くなり、廃れる。
+* 品質について
+** icon:plus-square[role="green"] 一定レベルは保てる。
+** icon:minus-square[role="red"] 限られた Wiki 書式で見やすく使いやすい文章を作るにはセンスが求められる。
+* 運用について
+** icon:minus-square[role="red"] 書き溜めた Wiki 書式データを他の環境に移行することは難しいため、新しいシステムに移行し辛い。
+** icon:minus-square[role="red"] 専用のデータバックアップの仕組みを作る必要がある。
+** icon:minus-square[role="red"] 障害により wiki システムが壊れた時のリストア作業が大変。
+====
+
+.Markdown を使った経験から…（クリックで開きます）
+[%collapsible]
+====
+* 個人としての使用感について
+** icon:plus-square[role="green"] テキストベースであるためデータを Git 等で管理しやすい。
+** icon:minus-square[role="red"] 標準仕様というものがないため方言が多く、ツールとマッチしないケースが出てくる（機能に不足感→独自に拡張→方言出現）。
+* チームとしての使用感について
+** icon:question-circle[] 経験なし
+* 環境構築について
+** icon:minus-square[role="red"] VSCode + 各種プラグイン/ツール類（graphviz, pandoc, plantuml）などで構築した場合、環境構築の手順が多すぎて作業グループ全体で揃えるのが大変。
+====
+
+:sectnums:
+== システム概要
+
+=== システム構成イメージ
+
+システム構成イメージを簡易的な配置図にて紹介します。
+
+.システム構成イメージ
+[plantuml,fig001-20210321-01-whole-system-image,svg]
+....
+@startuml
+
+skinparam agent {
+  roundCorner<<AGENT>> 25
+}
+
+node "Windows 10" as nde_001_win10 {  
+  agent "VSCode" as agt_001_vscode
+  folder "Document Folder" as fld_001_hostside
+  node "Docker Container" as cmp_001_container {
+    agent "Git" as agt_004_git
+    agent "VSCode Agent" <<AGENT>> as agt_002_vscode_agent
+    agent "Asciidoctor" as agt_003_asciidoctor
+    folder "Document Folder" as fld_002_containerside {
+      file "AsciiDoc File" as fil_001_adoc
+      file "HTML5 File" as fil_002_html5
+      file "PDF file" as fil_003_pdf
+    }
+  }
+}
+
+cloud "Git Repogitory" as cud_001_repo
+
+cud_001_repo -[hidden]ri- nde_001_win10
+agt_001_vscode -[hidden]ri- fld_001_hostside
+agt_001_vscode --> agt_002_vscode_agent : " ② [control] "
+agt_002_vscode_agent -ri-> agt_003_asciidoctor : " [call] "
+agt_002_vscode_agent -le-> agt_004_git : " [call] "
+agt_002_vscode_agent --> fil_001_adoc : " ③ [edit] "
+fld_001_hostside 0-[bold]-0 fld_002_containerside : " ① [mount] "
+agt_003_asciidoctor -[dashed]-> fil_001_adoc : " [read] "
+agt_003_asciidoctor --> fil_002_html5 : " ④ [output] "
+agt_003_asciidoctor --> fil_003_pdf : " ④ [output] "
+agt_004_git -[dashed]-> fil_001_adoc : " [read/write] "
+agt_004_git <-le-> cud_001_repo : " ⑤ [pull/push] "
+
+@enduml
+....
+
+=== システム使用イメージ
+
+構築した<<_システム構成イメージ,システム>>を使用するイメージです。
+
+. Docker Container を起動するときに、Document Folder をマウント（①）しておく。
+. VSCode の Remote-Containers プラグインで起動中のコンテナに接続（②）すると VSCode Agent が作られ、ここに VSCode 拡張機能をインストールする（Asciidoctor 拡張機能など）
+. VSCode で AsciiDoc ファイルを編集（③）する（Asciidoctor 拡張機能のプレビュー機能を使用）
+. 完成した AsciiDoc File を HTML5 や PDF に変換し保存（④）する。
+. Asciidoc File は Git 等のバージョン管理システムにて管理（⑤）する。
+
+== システム構築手順
+=== Docker 環境構築
+
+ここですべきことは、
+
+* WSL2 を使用可能にする
+* https://www.docker.com/products/docker-desktop[Docker Desktop] For Windows のインストール（バックエンド：WSL2）する
+
+ことです。 +
+この時点でコマンドプロンプトから docker コマンドが実行できれば問題ないです。
+
+参考 URL::
+https://docs.microsoft.com/ja-jp/windows/wsl/install-win10 +
+https://docs.docker.jp/docker-for-windows/install.html
+
+=== コンテナ起動
+
+Windows 10 上の Document Folder を
+[source,batch,linenums,start=1]
+....
+C:\Users\Name\MyDocs
+....
+とした場合、コンテナは次のコマンドで起動します。
+
+[source,shell,linenums,start=1]
+----
+docker run --name docker-asciidoctor-vscode \ # <1>
+  --volume='C:\Users\Name\MyDocs:/documents' \ # <2>
+  -it -d asciidoctor/docker-asciidoctor /bin/bash # <3>
+----
+<1> docker-asciidoctor-vscode としていますが、任意の名前をつけてかまいません。
+<2> Windows 10 上の Document Folder を 公式 Asciidoctor イメージ推奨の /documents にマウントします。
+<3> バックグラウンドで asciidoctor/docker-asciidoctor イメージの /bin/bash を起動します。
+
+同様の内容で Docker Desktop の GUI を使って起動することも可能です。
+
+<<<
+
+=== VSCode および拡張機能のインストール
+
+ここですべきことは、
+
+* 最新版の VSCode をインストールする
+* 拡張機能「Remote-Containers」（ms-vscode-remote.remote-containers）を導入する
+* 拡張機能「AsciiDoc」（asciidoctor.asciidoctor-vscode）を導入する
+
+ことです。
+
+参考 URL::
+https://code.visualstudio.com/docs/setup/windows +
+https://code.visualstudio.com/docs/editor/extension-gallery
+
+=== VSCode の設定
+
+VSCode に次の設定を追加します。
+
+.設定項目
+[cols=".^3h,.^3d,.^2d"]
+|===
+^|設定項目 ^|設定値 ^|備考
+
+|asciidoc.asciidoctor_command
+|asciidoctor -r asciidoctor-diagram
+|必須
+
+|asciidoc.asciidoctorpdf_command
+|asciidoctor-pdf -r asciidoctor-diagram -r /documents/asciidoc/resources/.pdf/theme-business-001/**prawn-svg-config.rb**
+|必須 +
+コンテナ上のパスを指定する +
+prawn-svg-config.rb については表外で説明する
+
+|asciidoc.use_asciidoctor_js
+|false
+|必須
+
+|asciidoc.use_asciidoctorpdf
+|true
+|必須
+
+|asciidoc.preview.useEditorStyle
+|false
+|*.adoc 内でスタイルの指定をするので、無効でよい
+
+|===
+
+.svg 画像に日本語を含める場合の対応
+****
+ここでは「prawn-svg-config.rb」という名前を使っていますが、中身が同じであれば名前は別でも大丈夫です。 +
+asciidoctor-pdf で svg 形式画像を出力する際、svg 形式画像に日本語が含まれると「￢」と表示されてしまう問題の対策として、次のコードを読み込ませる必要があります。
+
+[source,ruby,linenums,start=1]
+----
+Prawn::Svg::Font::GENERIC_CSS_FONT_MAPPING.merge!(
+  'sans-serif' => 'KaiGen Gothic JP'
+)
+----
+
+指定可能なフォントは、使用しているテーマで定義済みのものに限られます。
+****
+
+参考 URL::
+https://code.visualstudio.com/docs/getstarted/settings +
+https://github.com/asciidoctor/asciidoctor-pdf/issues/82#issuecomment-134949038
+
+== 使用方法
+=== VSCode で起動中のコンテナに接続
+
+kbd:[Ctrl+Shift+P] もしくは kbd:[F1] で『Remote-Containers: Attach to Running Container...』を実行し、ポップアップ表示された「<<_コンテナ起動,docker-asciidoctor-vscode>>」コンテナを選択すると、接続が開始されます。
+
+=== コンテナ内に VSCode 拡張機能をインストール
+
+kbd:[Ctrl+Shift+X] で拡張機能一覧を開き、CONTAINER リストの icon:cloud-download[] アイコン（ローカル拡張機能をリモートにインストール）をクリックして、インストールする拡張機能を選択し、インストールを実施します。
+
+=== Document Folder 内の *.adoc ファイルを開く
+
+kbd:[Ctrl+K] kbd:[Ctrl+O] もしくは 「menu:ファイル[フォルダを開く]」で /documents フォルダを開き、kbd:[Ctrl+Shift+E] で表示されるエクスプローラーで /documents ディレクトリ以下のファイルを開きます。
+
+=== *.adoc ファイルの編集とプレビュー
+
+asciidoctor 書式でファイルに内容を記述します。 +
+kbd:[Ctrl+K] kbd:[V] でサイドにプレビューを開きます。 +
+テキストを編集すると、プレビュー画面も更新されます。
+
+参考 URL::
+https://docs.asciidoctor.org/asciidoc/latest/ +
+https://takumon.github.io/asciidoc-syntax-quick-reference-japanese-translation/
+
+=== html/pdf ファイルの出力
+
+kbd:[Ctrl+Shift+P] もしくは kbd:[F1] で『AsciiDoc: Save HTML document』を実行すると、*.adoc と同じディレクトリに html ファイルが保存されます。 +
+また、 +
+kbd:[Ctrl+Shift+P] もしくは kbd:[F1] で『AsciiDoc: Export document as PDF』を実行すると、指定した出力先に PDF ファイルが保存されます。

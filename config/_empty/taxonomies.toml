@@ -1,0 +1,4 @@
+##### https://gohugo.io/content-management/taxonomies#configure-taxonomies
+#category = "categories"
+#series = "series"
+#tag = "tags"

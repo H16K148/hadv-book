@@ -1,69 +1,233 @@
+##### Hugo-Defined Configuration
+##### https://gohugo.io/getting-started/configuration/
+## The directory where Hugo finds archetype files (content templates). Also see Module 
+## Mounts Config for an alternative way to configure this directory (from Hugo 0.56).
+#archetypeDir = "archetypes"
+## The directory where Hugo finds asset files used in Hugo Pipes. Also see Module 
+## Mounts Config for an alternative way to configure this directory (from Hugo 0.56).
+#assetDir = "assets"
+## Hostname (and path) to the root, e.g. https://bep.is/
 baseURL = "/"
-languageCode = "ja-jp"
-title = "hadv-book"
+## See Configure Blackfriday
+#blackfriday =
+## See https://gohugo.io/getting-started/configuration/#configure-build
+# --> build.toml
+## Include drafts when building.
+#buildDrafts = false
+## Include content already expired.
+#buildExpired = false
+## Include content with publishdate in the future.
+#buildFuture = false
+## See https://gohugo.io/getting-started/configuration/#configure-file-caches
+# --> caches.toml
+## Enable to turn relative URLs into absolute.
+#canonifyURLs = false
+## The directory from where Hugo reads content files. Also see Module Mounts Config for 
+## an alternative way to configure this directory (from Hugo 0.56).
+#contentDir = "content"
+## The directory from where Hugo reads data files. Also see Module Mounts Config for an 
+## alternative way to configure this directory (from Hugo 0.56).
+#dataDir = "data"
+## Content without language indicator will default to this language.
 defaultContentLanguage = "ja"
-hasCJKLanguage = true
-enableEmoji = true
-
-########
-# (Optional) Set Google Analytics if you use it to track your website.
-# Always put it on the top of the configuration file, otherwise it won't work
-#googleAnalytics = "UA-XXXXXXXXX-X"
-# (Optional) If you provide a Disqus shortname, comments will be enabled on
-# all pages.
-#disqusShortname = "my-site"
-# (Optional) Set this to true if you use capital letters in file names
+## Render the default content language in subdir, e.g. content/en/. The site root / will 
+## then redirect to /en/.
+#defaultContentLanguageInSubdir = false
+## Will disable generation of alias redirects. Note that even if disableAliases is set, the 
+## aliases themselves are preserved on the page. The motivation with this is to be able to 
+## generate 301 redirects in an .htaccess, a Netlify _redirects file or similar using a 
+## custom output format.
+#disableAliases = false
+## Hugo will, by default, inject a generator meta tag in the HTML head on the home page 
+## only. You can turn it off, but we would really appreciate if you don’t, as this is a good 
+## way to watch Hugo’s popularity on the rise.
+#disableHugoGeneratorInject = false
+## Enable disabling of all pages of the specified Kinds. Allowed values in this 
+## list: "page", "home", "section", "taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404".
+#disableKinds = []
+## Disable automatic live reloading of browser window.
+#disableLiveReload = false
+## Do not convert the url/path to lowercase.
 disablePathToLower = true
-# (Optional) Set this to true to enable 'Last Modified by' date and git author
-#  information on 'doc' type pages.
+## Enable Emoji emoticons support for page content; see the Emoji Cheat Sheet.
+enableEmoji = true
+## Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will 
+## then update the Lastmod parameter for each page using the last git commit date for
+## that content file.
 enableGitInfo = true
-# (Optional) Theme is intended for documentation use, therefore it doesn't render taxonomy.
-# You can remove related files with config below
-disableKinds = ['taxonomy', 'taxonomyTerm']
-########
+## Enable inline shortcode support. See Inline Shortcodes.
+#enableInlineShortcodes = false
+## Show a placeholder instead of the default value or an empty string if a translation is 
+## missing.
+#enableMissingTranslationPlaceholders = false
+## Enable generation of robots.txt file.
+#enableRobotsTXT = false
+## See https://gohugo.io/getting-started/configuration/#configure-front-matter
+# --> frontmatter.toml
+## Prefix for footnote anchors.
+#footnoteAnchorPrefix = ""
+## Text to display for footnote return links.
+#footnoteReturnLinkContents = ""
+## Google Analytics tracking ID.
+#googleAnalytics = ""
+## If true, auto-detect Chinese/Japanese/Korean Languages in the content. This will make 
+## .Summary and .WordCount behave correctly for CJK languages.
+hasCJKLanguage = true
+## See https://gohugo.io/content-management/image-processing/#image-processing-config
+# --> imaging.toml
+## See https://gohugo.io/content-management/multilingual/#configure-languages
+# --> languages.toml
+## The site’s language code. It is used in the default RSS template and can be useful for 
+## multi-lingual sites.
+languageCode = "ja"
+## The site’s language name.
+#languageName = ""
+## See https://gohugo.io/content-management/multilingual/#disable-a-language
+#disableLanguages = []
+## The directory from where Hugo reads layouts (templates).
+#layoutDir = "layouts"
+## Enable logging.
+log = true
+## Log File path (if set, logging enabled automatically).
+logFile = "/documents/.logs/hugo.log"
+## See https://gohugo.io/getting-started/configuration-markup
+# --> markup.toml
+## See https://gohugo.io/content-management/menus/#add-non-content-entries-to-a-menu
+# --> menu.toml
+## See https://gohugo.io/getting-started/configuration/#configure-minify
+# --> minify.toml
+## See https://gohugo.io/hugo-modules/configuration/
+# --> module.toml
+## The editor to use when creating new content.
+#newContentEditor = ""
+## Don’t sync permission mode of files.
+#noChmod = false
+## Don’t sync modification time of files.
+#noTimes = false
+## Default number of elements per page in pagination.
+#paginate = 10
+## The path element used during pagination (https://example.com/page/2).
+#paginatePath = "page"
+## See https://gohugo.io/content-management/urls/#permalinks
+# --> permalinks.toml
+## Pluralize titles in lists.
+#pluralizeListTitles = true
+## The directory to where Hugo will write the final static site (the HTML files etc.).
+#publishDir = "public"
+## See https://gohugo.io/content-management/related/#configure-related-content
+# --> related.toml
+## Enable this to make all relative URLs relative to content root. Note that this does not 
+## affect absolute URLs.
+#relativeURLs = false
+## When using ref or relref to resolve page links and a link cannot resolved, it will be 
+## logged with this logg level. Valid values are ERROR (default) or WARNING. Any ERROR will 
+## fail the build (exit -1).
+#refLinksErrorLevel ="ERROR"
+## URL to be used as a placeholder when a page reference cannot be found in ref or 
+## relref. Is used as-is.
+#refLinksNotFoundURL = "/"
+## Maximum number of items in the RSS feed.
+#rssLimit = "unlimited"
+## See https://gohugo.io/templates/menu-templates/#section-menu-for-lazy-bloggers
+#sectionPagesMenu = ""
+## See https://gohugo.io/templates/sitemap-template/#configure-sitemapxml
+# --> sitemap.toml
+## A directory or a list of directories from where Hugo reads static files. Also see Module 
+## Mounts Config for an alternative way to configure this directory (from Hugo 0.56).
+#staticDir = "static"
+## The length of text in words to show in a .Summary.
+#summaryLength = 70
+## See https://gohugo.io/content-management/taxonomies#configure-taxonomies
+# --> taxonomies.toml
+## Theme to use (located by default in /themes/THEMENAME/).
+theme = "book"
+## The directory where Hugo reads the themes from.
+#themesDir = themes
+## Timeout for generating page contents, in milliseconds (defaults to 10 seconds). Note: 
+## this is used to bail out of recursive content generation, if your pages are slow to 
+## generate (e.g., because they require large image processing or depend on remote 
+## contents) you might need to raise this limit.
+#timeout = 10000
+## Site title.
+title = "hadv-book"
+## See https://gohugo.io/getting-started/configuration/#configure-title-case
+#titleCaseStyle = "AP"
+## When enabled, creates URL of the form /filename.html instead of /filename/.
+#uglyURLs = false
+## Enable verbose output.
+verbose = true
+## Enable verbose logging.
+verboseLog = true
+## Watch filesystem for changes and recreate as needed.
+#watch = false
+
+##### Hugo Book Theme Configuration
+##### https://themes.gohugo.io/hugo-book/
+## (Optional) Set Google Analytics if you use it to track your website.
+## Always put it on the top of the configuration file, otherwise it won't work
+#googleAnalytics = "UA-XXXXXXXXX-X"
+## (Optional) If you provide a Disqus shortname, comments will be enabled on
+## all pages.
+#disqusShortname = "my-site"
+## (Optional) Set this to true if you use capital letters in file names
+#disablePathToLower = true
+## (Optional) Set this to true to enable 'Last Modified by' date and git author
+##  information on 'doc' type pages.
+#enableGitInfo = true
+## (Optional) Theme is intended for documentation use, therefore it doesn't render taxonomy.
+## You can remove related files with config below
+#disableKinds = ['taxonomy', 'taxonomyTerm']
 [params]
-  # (Optional, default light) Sets color theme: light, dark or auto.
-  # Theme 'auto' switches between dark and light modes based on browser/os preferences
+  mainSections = ["posts", "docs"]
+  #####
+  ## (Optional, default light) Sets color theme: light, dark or auto.
+  ## Theme 'auto' switches between dark and light modes based on browser/os preferences
   BookTheme = 'light'
-  # (Optional, default true) Controls table of contents visibility on right side of pages.
-  # Start and end levels can be controlled with markup.tableOfContents setting.
-  # You can also specify this parameter per page in front matter.
+  ## (Optional, default true) Controls table of contents visibility on right side of pages.
+  ## Start and end levels can be controlled with markup.tableOfContents setting.
+  ## You can also specify this parameter per page in front matter.
   BookToC = true
-  # (Optional, default none) Set the path to a logo for the book. If the logo is
-  # /static/logo.png then the path would be 'logo.png'
+  ## (Optional, default none) Set the path to a logo for the book. If the logo is
+  ## /static/logo.png then the path would be 'logo.png'
   #BookLogo = 'logo.png'
-  # (Optional, default none) Set leaf bundle to render as side menu
-  # When not specified file structure and weights will be used
+  ## (Optional, default none) Set leaf bundle to render as side menu
+  ## When not specified file structure and weights will be used
   #BookMenuBundle = '/menu'
-  # (Optional, default docs) Specify section of content to render as menu
-  # You can also set value to "*" to render all sections to menu
+  ## (Optional, default docs) Specify section of content to render as menu
+  ## You can also set value to "*" to render all sections to menu
   BookSection = 'docs'
-  # Set source repository location.
-  # Used for 'Last Modified' and 'Edit this page' links.
+  ## Set source repository location.
+  ## Used for 'Last Modified' and 'Edit this page' links.
   BookRepo = 'https://github.com/H16K148/hadv-book'
-  # Enable 'Edit this page' links for 'doc' page type.
-  # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
-  # Path must point to the site directory.
+  ## Enable 'Edit this page' links for 'doc' page type.
+  ## Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
+  ## Path must point to the site directory.
   #BookEditPath = 'edit/master/exampleSite'
-  # (Optional, default January 2, 2006) Configure the date format used on the pages
-  # - In git information
-  # - In blog posts
+  ## (Optional, default January 2, 2006) Configure the date format used on the pages
+  ## - In git information
+  ## - In blog posts
   BookDateFormat = '2006-01-02'
-  # (Optional, default true) Enables search function with flexsearch,
-  # Index is built on fly, therefore it might slowdown your website.
-  # Configuration for indexing can be adjusted in i18n folder per language.
+  ## (Optional, default true) Enables search function with flexsearch,
+  ## Index is built on fly, therefore it might slowdown your website.
+  ## Configuration for indexing can be adjusted in i18n folder per language.
   BookSearch = true
-  # (Optional, default true) Enables comments template on pages
-  # By default partials/docs/comments.html includes Disqus template
-  # See https://gohugo.io/content-management/comments/#configure-disqus
-  # Can be overwritten by same param in page frontmatter
+  ## (Optional, default true) Enables comments template on pages
+  ## By default partials/docs/comments.html includes Disqus template
+  ## See https://gohugo.io/content-management/comments/#configure-disqus
+  ## Can be overwritten by same param in page frontmatter
   BookComments = false
-  # /!\ This is an experimental feature, might be removed or changed at any time
-  # (Optional, experimental, default false) Enables portable links and link checks in markdown pages.
-  # Portable links meant to work with text editors and let you write markdown without {{< relref >}} shortcode
-  # Theme will print warning if page referenced in markdown does not exists.
+  ## /!\ This is an experimental feature, might be removed or changed at any time
+  ## (Optional, experimental, default false) Enables portable links and link checks in markdown pages.
+  ## Portable links meant to work with text editors and let you write markdown without {{< relref >}} shortcode
+  ## Theme will print warning if page referenced in markdown does not exists.
   BookPortableLinks = false
-  # /!\ This is an experimental feature, might be removed or changed at any time
-  # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
+  ## /!\ This is an experimental feature, might be removed or changed at any time
+  ## (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
   BookServiceWorker = true
-########
+  ##### User-Define Configuration
+  ## サイドバーの Recent Posts の数（1～）
+  SidebarRecentLimit = 5
+  ## サイドバーの Last Modified の数（1～）
+  SidebarLastmodifiedLimit = 5
+  ## フッターの Copyright 表記
+  CopyrightHTML = "Copyright &#xA9; 2021 <a href=\"https://h16k148.github.io\">H16K148</a>. All Rights Reserved."

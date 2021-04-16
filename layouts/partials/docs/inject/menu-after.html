@@ -1,0 +1,25 @@
+<hr style="margin: 1.5em 0px;">
+<nav class="recent">
+  <strong>Recent Posts</strong>
+  <ul>{{ range first .Site.Params.SidebarRecentLimit (where site.RegularPages "Type" "in" site.Params.mainSections).ByDate.Reverse }}
+    <li><span>{{ .Date.Format "2006-01-02 15:04:05" }}</span>
+      <div>
+        <i class="fas fa-angle-double-right"></i>
+        <a class="active" style="display: inline;" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </div>
+    </li>
+  {{ end }}</ul>
+</nav>
+
+<hr style="margin: 1.5em 0px;">
+<nav class="lastmod">
+  <strong>Last Modified</strong>
+  <ul>{{ range first .Site.Params.SidebarLastmodifiedLimit (where site.RegularPages "Type" "in" site.Params.mainSections).ByLastmod.Reverse }}
+    <li><span>{{ .Lastmod.Format "2006-01-02 15:04:05" }}</span>
+      <div>
+        <i class="fas fa-angle-double-right"></i>
+        <a class="active" style="display: inline;" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </div>
+    </li>
+  {{ end }}</ul>
+</nav>

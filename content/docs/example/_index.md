@@ -1,71 +1,56 @@
 ---
-weight: 1
-bookFlatSection: true
-title: "Example Site"
+###### Hugo Predefined
+###### https://gohugo.io/content-management/front-matter/
+#aliases:       # Set on each page
+#audio:         # Set on each page
+#date: '{{ .Date }}'
+#description:   # Set on each page
+#draft: true
+#expiryDate:    # Set on each page 
+#headless:      # Set on each page
+#images:        # Set on each page
+isCJKLanguage: true
+#keywords:
+#  - hadv
+#layout:        # Set on each page
+#lastmod:       # Set on each page
+#linkTitle:     # Set on each page
+#markup:        # Set on each page
+#outputs:       # Set on each page
+#publishDate:   # Set on each page
+#resources:     # Set on each page
+#series:        # Set on each page
+#slug:          # Set on each page
+#summary:       # Set on each page
+title: "Example"
+type: 'docs'
+#url:           # Set on each page
+#videos:        # Set on each page
+weight: 2
+## <taxonomies>
+#categories: []
+#tags: []
+###### Hugo Book Theme Defined
+###### https://themes.gohugo.io/hugo-book/
+## See /content/docs/_index.md
+## (Optional) Set to 'true' to mark page as flat section in file-tree menu (if BookMenuBundle not set)
+#bookFlatSection: false
+## (Optional) Set to hide nested sections or pages at that level. Works only with file-tree menu mode
+#bookCollapseSection: false
+## (Optional) Set true to hide page or section from side menu (if BookMenuBundle not set)
+#bookHidden: false
+## (Optional) Set 'false' to hide ToC from page
+#bookToC: true
+## (Optional) If you have enabled BookComments for the site, you can disable it for specific pages.
+#bookComments: false
+## (Optional) Set to 'false' to exclude page from search index.
+#bookSearchExclude: true
 ---
 
-# Introduction
+# Example
 
-## Ferre hinnitibus erat accipitrem dixi Troiae tollens
+ここは Example（content/docs/example/_index.md）です。
 
-Lorem markdownum, a quoque nutu est *quodcumque mandasset* veluti. Passim
-inportuna totidemque nympha fert; repetens pendent, poenarum guttura sed vacet
-non, mortali undas. Omnis pharetramque gramen portentificisque membris servatum
-novabis fallit de nubibus atque silvas mihi. **Dixit repetitaque Quid**; verrit
-longa; sententia [mandat](http://pastor-ad.io/questussilvas) quascumque nescio
-solebat [litore](http://lacrimas-ab.net/); noctes. *Hostem haerentem* circuit
-[plenaque tamen](http://www.sine.io/in).
+## コンテンツ一覧
 
-- Pedum ne indigenae finire invergens carpebat
-- Velit posses summoque
-- De fumos illa foret
-
-## Est simul fameque tauri qua ad
-
-Locum nullus nisi vomentes. Ab Persea sermone vela, miratur aratro; eandem
-Argolicas gener.
-
-## Me sol
-
-Nec dis certa fuit socer, Nonacria **dies** manet tacitaque sibi? Sucis est
-iactata Castrumque iudex, et iactato quoque terraeque es tandem et maternos
-vittis. Lumina litus bene poenamque animos callem ne tuas in leones illam dea
-cadunt genus, et pleno nunc in quod. Anumque crescentesque sanguinis
-[progenies](http://www.late.net/alimentavirides) nuribus rustica tinguet. Pater
-omnes liquido creditis noctem.
-
-    if (mirrored(icmp_dvd_pim, 3, smbMirroredHard) != lion(clickImportQueue,
-            viralItunesBalancing, bankruptcy_file_pptp)) {
-        file += ip_cybercrime_suffix;
-    }
-    if (runtimeSmartRom == netMarketingWord) {
-        virusBalancingWin *= scriptPromptBespoke + raster(post_drive,
-                windowsSli);
-        cd = address_hertz_trojan;
-        soap_ccd.pcbServerGigahertz(asp_hardware_isa, offlinePeopleware, nui);
-    } else {
-        megabyte.api = modem_flowchart - web + syntaxHalftoneAddress;
-    }
-    if (3 < mebibyteNetworkAnimated) {
-        pharming_regular_error *= jsp_ribbon + algorithm * recycleMediaKindle(
-                dvrSyntax, cdma);
-        adf_sla *= hoverCropDrive;
-        templateNtfs = -1 - vertical;
-    } else {
-        expressionCompressionVariable.bootMulti = white_eup_javascript(
-                table_suffix);
-        guidPpiPram.tracerouteLinux += rtfTerabyteQuicktime(1,
-                managementRosetta(webcamActivex), 740874);
-    }
-    var virusTweetSsl = nullGigo;
-
-## Trepident sitimque
-
-Sentiet et ferali errorem fessam, coercet superbus, Ascaniumque in pennis
-mediis; dolor? Vidit imi **Aeacon** perfida propositos adde, tua Somni Fluctibus
-errante lustrat non.
-
-Tamen inde, vos videt e flammis Scythica parantem rupisque pectora umbras. Haec
-ficta canistris repercusso simul ego aris Dixit! Esse Fama trepidare hunc
-crescendo vigor ululasse vertice *exspatiantur* celer tepidique petita aversata
-oculis iussa est me ferro.
+{{< section >}}

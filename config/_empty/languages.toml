@@ -1,0 +1,20 @@
+##### https://gohugo.io/content-management/multilingual/#configure-languages
+#[ar]
+#  languagedirection = "rtl"
+#  title = "مدونتي"
+#  weight = 2
+#[en]
+#  title = "My blog"
+#  weight = 1
+#  [en.params]
+#    linkedin = "https://linkedin.com/whoever"
+#[fr]
+#  title = "Mon blogue"
+#  weight = 2
+#  [fr.params]
+#    linkedin = "https://linkedin.com/fr/whoever"
+#    [fr.params.navigation]
+#      help = "Aide"
+#[pt-pt]
+#  title = "O meu blog"
+#  weight = 3

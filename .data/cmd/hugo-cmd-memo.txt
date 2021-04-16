@@ -1,0 +1,3 @@
+# build
+hugo --cleanDestinationDir --gc --verbose --debug --minify --buildDrafts
+hugo --cleanDestinationDir --gc --verbose --debug --minify

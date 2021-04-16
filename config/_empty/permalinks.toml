@@ -1,0 +1,3 @@
+##### https://gohugo.io/content-management/urls/#permalinks
+#posts = "/:year/:month/:filename/"
+#docs = "/:sections/:filename/"
