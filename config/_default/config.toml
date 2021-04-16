@@ -113,7 +113,7 @@ logFile = "/documents/.logs/hugo.log"
 ## Pluralize titles in lists.
 #pluralizeListTitles = true
 ## The directory to where Hugo will write the final static site (the HTML files etc.).
-#publishDir = "public"
+publishDir = "docs"
 ## See https://gohugo.io/content-management/related/#configure-related-content
 # --> related.toml
 ## Enable this to make all relative URLs relative to content root. Note that this does not 
