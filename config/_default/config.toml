@@ -7,7 +7,7 @@
 ## Mounts Config for an alternative way to configure this directory (from Hugo 0.56).
 #assetDir = "assets"
 ## Hostname (and path) to the root, e.g. https://bep.is/
-baseURL = "/"
+baseURL = "/hadv-book/"
 ## See Configure Blackfriday
 #blackfriday =
 ## See https://gohugo.io/getting-started/configuration/#configure-build
@@ -113,7 +113,7 @@ logFile = "/documents/.logs/hugo.log"
 ## Pluralize titles in lists.
 #pluralizeListTitles = true
 ## The directory to where Hugo will write the final static site (the HTML files etc.).
-publishDir = "docs"
+#publishDir = "public"
 ## See https://gohugo.io/content-management/related/#configure-related-content
 # --> related.toml
 ## Enable this to make all relative URLs relative to content root. Note that this does not 
