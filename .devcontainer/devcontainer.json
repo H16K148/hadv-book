@@ -27,7 +27,7 @@
     "h16k148/hadv-hugo:latest",
     "-f",
     ".devcontainer/hadv-hugo/Dockerfile",
-    "."
+    ".devcontainer/hadv-hugo"
   ],
   "remoteEnv": {
     "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",

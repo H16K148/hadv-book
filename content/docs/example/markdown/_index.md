@@ -26,7 +26,7 @@ title: "Markdown"
 type: docs
 #url:           # Set on each page
 #videos:        # Set on each page
-weight: 10
+weight: 20
 ## <taxonomies>
 categories: ["example"]
 tags: []
@@ -36,7 +36,7 @@ tags: []
 ## (Optional) Set to 'true' to mark page as flat section in file-tree menu (if BookMenuBundle not set)
 #bookFlatSection: false
 ## (Optional) Set to hide nested sections or pages at that level. Works only with file-tree menu mode
-#bookCollapseSection: false
+bookCollapseSection: true
 ## (Optional) Set true to hide page or section from side menu (if BookMenuBundle not set)
 #bookHidden: false
 ## (Optional) Set 'false' to hide ToC from page

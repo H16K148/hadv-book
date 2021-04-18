@@ -26,7 +26,7 @@ title: "AsciiDoc"
 type: "docs"
 #url:           # Set on each page
 #videos:        # Set on each page
-weight: 20
+weight: 10
 ## <taxonomies>
 categories: ["example"]
 tags: []
