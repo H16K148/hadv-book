@@ -1,3 +1,8 @@
-# build
-hugo --cleanDestinationDir --gc --verbose --debug --minify --buildDrafts
-hugo --cleanDestinationDir --gc --verbose --debug --minify
+# start server
+hugo server --disableFastRender
+
+# staging build 
+hugo -e staging --cleanDestinationDir --gc --verbose --debug --minify
+
+# production build
+hugo -e production --cleanDestinationDir --gc --verbose --debug --minify

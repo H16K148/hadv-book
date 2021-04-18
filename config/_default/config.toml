@@ -7,7 +7,7 @@
 ## Mounts Config for an alternative way to configure this directory (from Hugo 0.56).
 #assetDir = "assets"
 ## Hostname (and path) to the root, e.g. https://bep.is/
-baseURL = "/hadv-book/"
+baseURL = "https://localhost/hadv-book/"
 ## See Configure Blackfriday
 #blackfriday =
 ## See https://gohugo.io/getting-started/configuration/#configure-build
