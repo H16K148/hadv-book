@@ -84,9 +84,10 @@ aside nav ul li {
 }
 
 @media screen and (max-width: $mobile-breakpoint) {
-  article.asciidoc-content {
+  body {
     word-break: break-word;
-
+  }
+  article.asciidoc-content {
     table {
       width: 100%;
       overflow-x: auto;
