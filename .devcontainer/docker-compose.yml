@@ -18,7 +18,6 @@ services:
     image: httpd:alpine
     tty: true
     init: true
-    restart: always
     volumes:
       - ../docs:/usr/local/apache2/htdocs/${HADV_URL_SUBDIRECTORY}
     ports:

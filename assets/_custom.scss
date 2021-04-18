@@ -82,3 +82,16 @@ body > footer div.copyright {
 aside nav ul li {
   margin: 0.5em 0em;
 }
+
+@media screen and (max-width: $mobile-breakpoint) {
+  article.asciidoc-content {
+    word-break: break-word;
+
+    table {
+      width: 100%;
+      overflow-x: auto;
+      word-break: keep-all;
+      display: block;
+    }
+  }
+}
