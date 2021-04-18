@@ -49,7 +49,8 @@ type: docs
 
 # hadv-book を始めましょう
 
-ここは hadv-book のトップページ（content/_index.md）です。
+ここは hadv-book のトップページ（content/_index.md）です。  
+ここを書き換えて、プロジェクト・サイトのホームページとします。
 
 ## hadv-book の紹介
 
@@ -62,7 +63,7 @@ Windows に WSL2 を使用した
 [VScode](https://code.visualstudio.com/) と 
 [Git](https://git-scm.com/) さえあれば他に何もいりません。  
 いまご覧になっているページをすぐに手元に再現できます。  
-使い方は [Usage]({{< ref "/docs/info/usage/index" >}}) にまとめました！
+使い方は [Usage]({{< ref "/docs/info/usage/" >}}) にまとめました！
 <--->
 ### AsciiDoc 対応
 
@@ -92,7 +93,7 @@ hadv-book は、[Hugo Book Theme](https://themes.gohugo.io/hugo-book/) （[commi
 
 Info（content/docs/info）には、
 
-* hadv-book の使い方（→ [Usage]({{< ref "/docs/info/usage/index" >}})）
+* hadv-book の使い方（→ [Usage]({{< ref "/docs/info/usage/" >}})）
 * テンプレート集（→ [Templates]({{< ref "/docs/info/templates/" >}})）
 
 などがあります。

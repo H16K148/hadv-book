@@ -13,3 +13,13 @@ services:
       - ..:/documents
     env_file:
       - .env
+  hadv-staging-site:
+    container_name: ${HADV_NAME_PREFIX}-hadv-httpd
+    image: httpd:alpine
+    tty: true
+    init: true
+    restart: always
+    volumes:
+      - ../docs:/usr/local/apache2/htdocs/${HADV_URL_SUBDIRECTORY}
+    ports:
+      - "${HADV_STAGING_PORT}:80"

@@ -3,8 +3,8 @@
 ###### https://gohugo.io/content-management/front-matter/
 #aliases:       # Set on each page
 #audio:         # Set on each page
-#date: '{{ .Date }}'
-description: "hadv-book の使い方"
+date: 2021-04-18T19:38:00+09:00
+description: "WSL2 のインストールや設定の参考情報"
 #draft: true
 #expiryDate:    # Set on each page 
 #headless:      # Set on each page
@@ -22,7 +22,7 @@ keywords:
 #series:        # Set on each page
 #slug:          # Set on each page
 #summary:       # Set on each page
-title: "Usage"
+title: "02. WSL2 の準備"
 type: 'docs'
 #url:           # Set on each page
 #videos:        # Set on each page
@@ -47,22 +47,9 @@ weight: 1
 #bookSearchExclude: true
 ---
 
-# Usage（hadv-book の使い方）
+# WSL2 の準備
 
-ここは Usage（content/docs/info/usage/_index.md）です。
+ここは 002-wsl2（content/docs/info/usage/002-wsl2）です。
 
 ## はじめに
 
-（作成中）
-
-## 環境構築
-
-環境構築の手順については「カイハツNoヒト」にページを用意しましたので、そちらを参照してください。
-
-## コンテンツの追加
-
-（作成中）
-
-## ビルド
-
-（作成中）
