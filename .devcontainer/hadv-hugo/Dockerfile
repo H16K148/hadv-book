@@ -3,5 +3,8 @@ FROM klakegg/hugo:0.82.0-ext-alpine
 LABEL version="20210404"
 LABEL description="公式イメージ（klakegg/hugo:0.82.0-ext-alpine）を拡張"
 
-RUN apk --no-cache add docker-cli
+RUN apk --no-cache add docker-cli tzdata && \
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+    apk del tzdata && \
+    rm -rf /var/cache/apk/*
 COPY asciidoctor /usr/local/bin
