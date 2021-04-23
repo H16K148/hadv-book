@@ -1,1 +1,4 @@
 # hadv-book
+
+## License
+MIT
