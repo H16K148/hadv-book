@@ -28,7 +28,7 @@ type: 'posts'
 #videos:        # Set on each page
 #weight:        # Set on each page
 ## <taxonomies>
-categories: ["業務日誌"]
+categories: ["example"]
 tags: []
 ###### Hugo Book Theme Defined
 ###### https://themes.gohugo.io/hugo-book/

@@ -63,7 +63,7 @@ Windows に WSL2 を使用した
 [VScode](https://code.visualstudio.com/) と 
 [Git](https://git-scm.com/) さえあれば他に何もいりません。  
 いまご覧になっているページをすぐに手元に再現できます。  
-使い方は [Usage]({{< ref "/docs/info/usage/" >}}) にまとめました！
+使い方は [Usage]({{< ref "/docs/usage/" >}}) にまとめました！
 <--->
 ### AsciiDoc 対応
 
@@ -89,12 +89,12 @@ hadv-book は、[Hugo Book Theme](https://themes.gohugo.io/hugo-book/) （[commi
 ## 初期サイドメニューについて
 
 {{< columns >}}
-### Info
+### Usage
 
-Info（content/docs/info）には、
+Usage（content/docs/usage）には、
 
-* hadv-book の使い方（→ [Usage]({{< ref "/docs/info/usage/" >}})）
-* テンプレート集（→ [Templates]({{< ref "/docs/info/templates/" >}})）
+* hadv-book の開始方法（→ [Getting Started]({{< ref "/docs/usage/getting-started/" >}})）
+* テンプレート集（→ [Templates]({{< ref "/docs/usage/templates/" >}})）
 
 などがあります。
 <--->
