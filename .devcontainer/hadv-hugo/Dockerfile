@@ -1,7 +1,7 @@
-FROM klakegg/hugo:0.82.0-ext-alpine
+FROM klakegg/hugo:0.82.1-ext-alpine
 
-LABEL version="20210404"
-LABEL description="公式イメージ（klakegg/hugo:0.82.0-ext-alpine）を拡張"
+LABEL version="20210424"
+LABEL description="公式イメージ（klakegg/hugo:0.82.1-ext-alpine）を拡張"
 
 RUN apk --no-cache add docker-cli tzdata && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
