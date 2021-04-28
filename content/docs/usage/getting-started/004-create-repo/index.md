@@ -4,7 +4,7 @@
 #aliases:       # Set on each page
 #audio:         # Set on each page
 date: 2021-04-24T18:29:11+09:00
-description: "hadv-book リポジトリ (Github Template Repository) から新規のリポジトリ作成の参考情報"
+description: "hadv-book テンプレートを使って新規リポジトリを作成する参考情報"
 #draft: true
 #expiryDate:    # Set on each page 
 #headless:      # Set on each page
@@ -21,7 +21,7 @@ keywords:
 #resources:     # Set on each page
 #series:        # Set on each page
 #slug:          # Set on each page
-summary: "hadv-book リポジトリ（Github Template Repository）から新規リポジトリの作成手順など"
+summary: "hadv-book テンプレートを使って新規リポジトリを作成する手順など"
 title: "4. リポジトリの作成"
 type: 'docs'
 #url:           # Set on each page

@@ -1,0 +1,130 @@
+<!doctype html><html lang=ja dir=ltr><head><meta name=generator content="Hugo 0.82.1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="hadv-book テンプレートを使って作成した新規リポジトリの Web サイトをビルドする参考情報"><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="6. Web サイトのビルド"><meta property="og:description" content="hadv-book テンプレートを使って作成した新規リポジトリの Web サイトをビルドする参考情報"><meta property="og:type" content="article"><meta property="og:url" content="/hadv-book/docs/usage/getting-started/006-build-website/"><meta property="article:section" content="docs"><meta property="article:published_time" content="2021-04-28T21:40:01+09:00"><meta property="article:modified_time" content="2021-04-28T21:40:01+09:00"><title>6. Web サイトのビルド | hadv-book</title><link rel=manifest href=/hadv-book/manifest.json><link rel=icon href=/hadv-book/favicon.png type=image/x-icon><link rel=stylesheet href=/hadv-book/book.min.286ee045e00b0ff5e023d26eced55641812e81d956629efc6ed3d91cb6feacbf.css integrity="sha256-KG7gReALD/XgI9JuztVWQYEugdlWYp78btPZHLb+rL8="><script type=text/javascript src=/hadv-book/tiny_segmenter-0.2.min.3fa816ded8ca2321b4061d4c169697afaa1d32700c69e90323bf828226585534.js></script><script defer src=/hadv-book/ja.search.min.76c76023b3f8cce3e703a2115c636002626d20bcb86140cf7d86ee4630e03c69.js integrity="sha256-dsdgI7P4zOPnA6IRXGNgAmJtILy4YUDPfYbuRjDgPGk="></script><script defer src=/hadv-book/sw.min.4ebe30fc6123bbe10bab7df118e1970fc31c9a92a0d2741967ee6572cb27223d.js integrity="sha256-Tr4w/GEju+ELq33xGOGXD8McmpKg0nQZZ+5lcssnIj0="></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/hadv-book><span>hadv-book</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-10be05eaa2d0f3380454320e18f99b72 class=toggle checked>
+<label for=section-10be05eaa2d0f3380454320e18f99b72 class="flex justify-between"><a href=/hadv-book/docs/usage/>Usage</a>
+<span>▾</span></label><ul><li><input type=checkbox id=section-ba4ef7fb0ef6ec372cbd408daf8ee094 class=toggle checked>
+<label for=section-ba4ef7fb0ef6ec372cbd408daf8ee094 class="flex justify-between"><a href=/hadv-book/docs/usage/getting-started/>Getting Started</a>
+<span>▾</span></label><ul><li><a href=/hadv-book/docs/usage/getting-started/001-win10/>1. Windows10 の準備</a></li><li><a href=/hadv-book/docs/usage/getting-started/002-wsl2/>2. WSL2 の準備</a></li><li><a href=/hadv-book/docs/usage/getting-started/003-vscode+git/>3. VSCode と Git の準備</a></li><li><a href=/hadv-book/docs/usage/getting-started/004-create-repo/>4. リポジトリの作成</a></li><li><a href=/hadv-book/docs/usage/getting-started/005-edit-repo/>5. リポジトリの編集</a></li><li><a href=/hadv-book/docs/usage/getting-started/006-build-website/ class=active>6. Web サイトのビルド</a></li><li><a href=/hadv-book/docs/usage/getting-started/007-github-pages/>7. Github Pages で公開</a></li></ul></li><li><input type=checkbox id=section-c7a6e30e05563ef23f781365f5a603aa class=toggle>
+<label for=section-c7a6e30e05563ef23f781365f5a603aa class="flex justify-between"><a href=/hadv-book/docs/usage/templates/>Templates</a>
+<span>▾</span></label><ul><li><input type=checkbox id=section-a77cb403f31b59fc466778d475cc8fa3 class=toggle>
+<label for=section-a77cb403f31b59fc466778d475cc8fa3 class="flex justify-between"><a href=/hadv-book/docs/usage/templates/minutes/>議事録</a>
+<span>▾</span></label><ul><li><a href=/hadv-book/docs/usage/templates/minutes/tplt001-md/>議事録テンプレート.md</a></li></ul></li></ul></li></ul></li><li><input type=checkbox id=section-090e5e9541fbf7abe3678403e1b40824 class=toggle>
+<label for=section-090e5e9541fbf7abe3678403e1b40824 class="flex justify-between"><a href=/hadv-book/docs/example/>Example</a>
+<span>▾</span></label><ul><li><a href=/hadv-book/docs/example/asciidoc/>AsciiDoc</a></li><li><input type=checkbox id=section-920f9c2dd946c63cb0f5d07486dfeb76 class=toggle>
+<label for=section-920f9c2dd946c63cb0f5d07486dfeb76 class="flex justify-between"><a href=/hadv-book/docs/example/markdown/>Markdown</a>
+<span>▾</span></label><ul><li class=book-section-flat><span>Shortcodes</span><ul><li><a href=/hadv-book/docs/example/markdown/shortcodes/buttons/>Buttons</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/columns/>Columns</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/details/>Details</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/hints/>Hints</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/katex/>KaTeX</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/mermaid/>Mermaid</a></li><li><input type=checkbox id=section-f5b1ac0cefce0032f84e72f3df258ddd class=toggle>
+<label for=section-f5b1ac0cefce0032f84e72f3df258ddd class="flex justify-between"><a href=/hadv-book/docs/example/markdown/shortcodes/section/>Section</a>
+<span>▾</span></label><ul><li><a href=/hadv-book/docs/example/markdown/shortcodes/section/page1/>Page 1</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/section/page2/>Page 2</a></li></ul></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/tabs/>Tabs</a></li></ul></li></ul></li></ul></li></ul><ul><li><a href=/hadv-book/posts/>Blog</a></li></ul><hr style="margin:1.5em 0"><nav class=recent><strong>Recent Posts</strong><ul><li><span>2021-04-28 22:34:46</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/007-github-pages/>7. Github Pages で公開</a></div></li><li><span>2021-04-28 21:40:01</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/006-build-website/>6. Web サイトのビルド</a></div></li><li><span>2021-04-25 00:40:06</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/005-edit-repo/>5. リポジトリの編集</a></div></li><li><span>2021-04-24 18:29:11</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/004-create-repo/>4. リポジトリの作成</a></div></li><li><span>2021-04-22 22:07:00</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/003-vscode+git/>3. VSCode と Git の準備</a></div></li></ul></nav><hr style="margin:1.5em 0"><nav class=lastmod><strong>Last Modified</strong><ul><li><span>2021-04-28 22:34:46</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/007-github-pages/>7. Github Pages で公開</a></div></li><li><span>2021-04-28 21:40:01</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/006-build-website/>6. Web サイトのビルド</a></div></li><li><span>2021-04-25 02:48:41</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/005-edit-repo/>5. リポジトリの編集</a></div></li><li><span>2021-04-25 02:48:41</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/004-create-repo/>4. リポジトリの作成</a></div></li><li><span>2021-04-23 12:11:49</span><div><i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/templates/minutes/tplt001-md/>議事録テンプレート.md</a></div></li></ul></nav></nav><script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/hadv-book/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>6. Web サイトのビルド</strong>
+<label for=toc-control><img src=/hadv-book/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><div style="margin:0 0 1em"><strong>Table of Contents</strong></div><nav id=TableOfContents><ul><li><a href=#はじめに>はじめに</a></li><li><a href=#01-hugo-コマンドでビルド>01. hugo コマンドでビルド</a></li><li><a href=#02-ビルドした-web-サイトの確認>02. ビルドした Web サイトの確認</a></li></ul></nav><hr style="margin:1.5em 0"><nav><strong>Categories</strong><ul><li class=book-section-flat><ul><li class="flex justify-between"><a href=/hadv-book/categories/example/>example</a>
+<span>3</span></li><li class="flex justify-between"><a href=/hadv-book/categories/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88.md/>テンプレート.md</a>
+<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/>環境構築</a>
+<span>7</span></li></ul></li></ul></nav><hr style="margin:1.5em 0"><nav><strong>Tags</strong><ul><li class=book-section-flat><ul><li class="flex justify-between"><a href=/hadv-book/tags/DevContainer/>DevContainer</a>
+<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Git/>Git</a>
+<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Github/>Github</a>
+<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Hugo/>Hugo</a>
+<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/VSCode/>VSCode</a>
+<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Windows10/>Windows10</a>
+<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/WSL2/>WSL2</a>
+<span>1</span></li></ul></li></ul></nav></aside></header><div class=breadcrumb-shell><ol class=breadcrumb><li><a href=/hadv-book/>HOME</a><li><a href=/hadv-book/docs/usage/>Usage</a><li><a href=/hadv-book/docs/usage/getting-started/>Getting Started</a><li>6. Web サイトのビルド</ol></div><article class=markdown><h1 id=6-web-サイトのビルド>6. Web サイトのビルド
+<a class=anchor href=#6-web-%e3%82%b5%e3%82%a4%e3%83%88%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89>#</a></h1><p>ここは 006-build-website（content/docs/usage/getting-started/006-build-website）です。</p><h2 id=はじめに>はじめに
+<a class=anchor href=#%e3%81%af%e3%81%98%e3%82%81%e3%81%ab>#</a></h2><p>これまでの手順で、test-hadv-book の Web サイトをビルドする準備が整いました。<br>ここでは、hugo コマンドでビルドし、ステージングサイトで Web サイトを確認するところまで行います。</p><h2 id=01-hugo-コマンドでビルド>01. hugo コマンドでビルド
+<a class=anchor href=#01-hugo-%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%a7%e3%83%93%e3%83%ab%e3%83%89>#</a></h2><p>ステージングサイトのビルドを行います。<br>初回のビルドは、hadv-book だった時のキャッシュ等も残っているため、いくつかビルドオプションを付与することをおススメします。</p><details><summary>hugo コマンドオプション</summary><div class=markdown-inner><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>bash-5.1# hugo --help
+hugo is the main command, used to build your Hugo site.
+
+Hugo is a Fast and Flexible Static Site Generator
+built with love by spf13 and friends in Go.
+
+Complete documentation is available at http://gohugo.io/.
+
+Usage:
+  hugo <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
+  hugo <span style=color:#f92672>[</span>command<span style=color:#f92672>]</span>
+
+Available Commands:
+  config      Print the site configuration
+  convert     Convert your content to different formats
+  deploy      Deploy your site to a Cloud provider.
+  env         Print Hugo version and environment info
+  gen         A collection of several useful generators.
+  help        Help about any command
+  import      Import your site from others.
+  list        Listing out various types of content
+  mod         Various Hugo Modules helpers.
+  new         Create new content <span style=color:#66d9ef>for</span> your site
+  server      A high performance webserver
+  version     Print the version number of Hugo
+
+Flags:
+  -b, --baseURL string             hostname <span style=color:#f92672>(</span>and path<span style=color:#f92672>)</span> to the root, e.g. http://spf13.com/
+  -D, --buildDrafts                include content marked as draft
+  -E, --buildExpired               include expired content
+  -F, --buildFuture                include content with publishdate in the future
+      --cacheDir string            filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --cleanDestinationDir        remove files from destination not found in static directories
+      --config string              config file <span style=color:#f92672>(</span>default is path/config.yaml|json|toml<span style=color:#f92672>)</span>
+      --configDir string           config dir <span style=color:#f92672>(</span>default <span style=color:#e6db74>&#34;config&#34;</span><span style=color:#f92672>)</span>
+  -c, --contentDir string          filesystem path to content directory
+      --debug                      debug output
+  -d, --destination string         filesystem path to write files to
+      --disableKinds strings       disable different kind of pages <span style=color:#f92672>(</span>home, RSS etc.<span style=color:#f92672>)</span>
+      --enableGitInfo              add Git revision, date and author info to the pages
+  -e, --environment string         build environment
+      --forceSyncStatic            copy all files when static is changed.
+      --gc                         enable to run some cleanup tasks <span style=color:#f92672>(</span>remove unused cache files<span style=color:#f92672>)</span> after the build
+  -h, --help                       help <span style=color:#66d9ef>for</span> hugo
+      --i18n-warnings              print missing translations
+      --ignoreCache                ignores the cache directory
+      --ignoreVendor               ignores any _vendor directory
+      --ignoreVendorPaths string   ignores any _vendor <span style=color:#66d9ef>for</span> module paths matching the given Glob pattern
+  -l, --layoutDir string           filesystem path to layout directory
+      --log                        enable Logging
+      --logFile string             log File path <span style=color:#f92672>(</span><span style=color:#66d9ef>if</span> set, logging enabled automatically<span style=color:#f92672>)</span>
+      --minify                     minify any supported output format <span style=color:#f92672>(</span>HTML, XML etc.<span style=color:#f92672>)</span>
+      --noChmod                    don<span style=color:#e6db74>&#39;t sync permission mode of files
+</span><span style=color:#e6db74>      --noTimes                    don&#39;</span>t sync modification time of files
+      --path-warnings              print warnings on duplicate target paths etc.
+      --print-mem                  print memory usage to screen at intervals
+      --quiet                      build in quiet mode
+      --renderToMemory             render to memory <span style=color:#f92672>(</span>only useful <span style=color:#66d9ef>for</span> benchmark testing<span style=color:#f92672>)</span>
+  -s, --source string              filesystem path to read files relative from
+      --templateMetrics            display metrics about template executions
+      --templateMetricsHints       calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings              themes to use <span style=color:#f92672>(</span>located in /themes/THEMENAME/<span style=color:#f92672>)</span>
+      --themesDir string           filesystem path to themes directory
+      --trace file                 write trace to file <span style=color:#f92672>(</span>not useful in general<span style=color:#f92672>)</span>
+  -v, --verbose                    verbose output
+      --verboseLog                 verbose logging
+  -w, --watch                      watch filesystem <span style=color:#66d9ef>for</span> changes and recreate as needed
+
+Additional help topics:
+  hugo check   Contains some verification checks
+
+Use <span style=color:#e6db74>&#34;hugo [command] --help&#34;</span> <span style=color:#66d9ef>for</span> more information about a command.
+</code></pre></div></div></details><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo -e staging --cleanDestinationDir --gc --minify
+</code></pre></td></tr></table></div></div><p>build environment に「staging」をセットすることにより、config/_default/config.toml の設定を config/staging/config.toml の設定で上書きします。
+その他のオプションは正しい意味で「適当」に付けます。
+例では、static ディレクトリにないファイルを削除したり、minify を有効にして、使用していないキャッシュをビルド後に削除したりしています</p><p>VSCode のターミナルにて、上記コマンドを実行します。</p><p><img src=./fig001-build-website.png alt="Build Website"></p><h2 id=02-ビルドした-web-サイトの確認>02. ビルドした Web サイトの確認
+<a class=anchor href=#02-%e3%83%93%e3%83%ab%e3%83%89%e3%81%97%e3%81%9f-web-%e3%82%b5%e3%82%a4%e3%83%88%e3%81%ae%e7%a2%ba%e8%aa%8d>#</a></h2><p>ステージングサイトの URL にアクセスします。<br>URL は以下のひな形に設定値を当てはめたものになります。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>http://localhost:&lt;ポート番号&gt;/&lt;サブディレクトリ&gt;
+</code></pre></div><ul><li>ポート番号<ul><li><a href=/hadv-book/docs/usage/getting-started/005-edit-repo/#devcontainerenv>.devcontainer/.env</a> の HADV_STAGING_PORT</li></ul></li><li>サブディレクトリ<ul><li><a href=/hadv-book/docs/usage/getting-started/005-edit-repo/#devcontainerenv>.devcontainer/.env</a> の HADV_URL_SUBDIRECTORY</li></ul></li></ul><p>そのため、これまで作成してきた test-hadv-book の場合は、</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>http://localhost:8083/test-hadv-book
+</code></pre></div><p>にアクセスすることになります。</p><p><img src=./fig002-staging-website.png alt="Staging Website"></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><div style="margin:0 0 1em"><strong>Table of Contents</strong></div><nav id=TableOfContents><ul><li><a href=#はじめに>はじめに</a></li><li><a href=#01-hugo-コマンドでビルド>01. hugo コマンドでビルド</a></li><li><a href=#02-ビルドした-web-サイトの確認>02. ビルドした Web サイトの確認</a></li></ul></nav><hr style="margin:1.5em 0"><nav><strong>Categories</strong><ul><li class=book-section-flat><ul><li class="flex justify-between"><a href=/hadv-book/categories/example/>example</a>
+<span>3</span></li><li class="flex justify-between"><a href=/hadv-book/categories/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88.md/>テンプレート.md</a>
+<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/>環境構築</a>
+<span>7</span></li></ul></li></ul></nav><hr style="margin:1.5em 0"><nav><strong>Tags</strong><ul><li class=book-section-flat><ul><li class="flex justify-between"><a href=/hadv-book/tags/DevContainer/>DevContainer</a>
+<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Git/>Git</a>
+<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Github/>Github</a>
+<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Hugo/>Hugo</a>
+<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/VSCode/>VSCode</a>
+<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Windows10/>Windows10</a>
+<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/WSL2/>WSL2</a>
+<span>1</span></li></ul></li></ul></nav></div></aside></main><footer><div class=copyright>Copyright &#169; 2021 <a href=https://h16k148.github.io>H16K148</a>. All Rights Reserved.</div></footer></body></html>
