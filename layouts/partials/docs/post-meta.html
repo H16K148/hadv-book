@@ -1,5 +1,5 @@
-{{ with .Date}}
-  <h5 style="margin-left: 1em;">{{ partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }}</h5>
+{{ with .Date }}
+  <h5>{{ partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }}</h5>
 {{ end }}
 
 {{ range $taxonomy, $_ := .Site.Taxonomies }}
@@ -10,4 +10,14 @@
     {{- end }}
   </div>
   {{ end }}
+{{ end }}
+
+{{ if .Params.image }}
+<p>
+  {{ with .Resources.GetMatch .Params.image }}
+    <img src={{ .RelPermalink }} />
+  {{ else }}
+    <img src={{ .Params.image | relURL }} />
+  {{ end }}
+</p>
 {{ end }}

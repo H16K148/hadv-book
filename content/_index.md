@@ -75,7 +75,7 @@ Asciidoctor の公式 Docker イメージを使ってビルドをしますので
 {{< columns >}}
 ### Theme について
 
-hadv-book は、[Hugo Book Theme](https://themes.gohugo.io/hugo-book/) （[commit](https://github.com/alex-shpak/hugo-book/commit/1e4bcc2cc3186794c1becbe0a0d9c924264d0146)）をカスタマイズして使用しています。  
+hadv-book は、[Hugo Book Theme](https://themes.gohugo.io/hugo-book/) （[commit](https://github.com/alex-shpak/hugo-book/commit/50147be131a5e4cb1bc7aa6b49001842edcadf87)）をカスタマイズして使用しています。  
 もちろん Book 以外の Theme にも変更は可能です。サポートはしませんが、ご自由にどうぞ！  
 （その場合、hadv-**book**ではなくなってしまいますが …）
 <--->
@@ -83,7 +83,6 @@ hadv-book は、[Hugo Book Theme](https://themes.gohugo.io/hugo-book/) （[commi
 
 [Hugo](https://gohugo.io/) は数ある静的サイトジェネレーターの中でも、Web サイトのビルドが一番はやい！  
 記事を書くたびに蓄積されていくストレスもありません。コンテンツの数が増えても安心です。
-
 {{< /columns >}}
 
 ## 初期サイドメニューについて
@@ -117,3 +116,8 @@ Blog（content/posts）のサンプルを表示します。
 <--->
 
 {{< /columns >}}
+
+## 更新情報
+
+* 2021-08-08
+  * ベースとなる [Hugo Book Theme](https://themes.gohugo.io/hugo-book/) を以前の [commit](https://github.com/alex-shpak/hugo-book/commit/1e4bcc2cc3186794c1becbe0a0d9c924264d0146) から最新に更新しました。
