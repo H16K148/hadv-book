@@ -121,3 +121,5 @@ Blog（content/posts）のサンプルを表示します。
 
 * 2021-08-08
   * ベースとなる [Hugo Book Theme](https://themes.gohugo.io/hugo-book/) を以前の [commit](https://github.com/alex-shpak/hugo-book/commit/1e4bcc2cc3186794c1becbe0a0d9c924264d0146) から最新に更新しました。
+  * hugo のバージョンを更新しました（0.82.1 → 0.86.1）
+  * asciidoctor のバージョンを更新しました（2.0.12 → 2.0.16）

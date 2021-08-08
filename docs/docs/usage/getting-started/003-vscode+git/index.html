@@ -1,49 +1,596 @@
-<!doctype html><html lang=ja dir=ltr><head><meta name=generator content="Hugo 0.82.1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="VSCode と Git のインストールや設定の参考情報"><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="3. VSCode と Git の準備"><meta property="og:description" content="VSCode と Git のインストールや設定の参考情報"><meta property="og:type" content="article"><meta property="og:url" content="/hadv-book/docs/usage/getting-started/003-vscode+git/"><meta property="article:section" content="docs"><meta property="article:published_time" content="2021-04-22T22:07:00+09:00"><meta property="article:modified_time" content="2021-04-28T21:57:51+00:00"><title>3. VSCode と Git の準備 | hadv-book</title><link rel=manifest href=/hadv-book/manifest.json><link rel=icon href=/hadv-book/favicon.png type=image/x-icon><link rel=stylesheet href=/hadv-book/book.min.241c471f5c0d0512d1095569858aa6b800812d290b71f9f027f4aea2ee1f5742.css><script type=text/javascript src=/hadv-book/tiny_segmenter-0.2.min.3fa816ded8ca2321b4061d4c169697afaa1d32700c69e90323bf828226585534.js></script><script defer src=/hadv-book/flexsearch.min.js></script><script defer src=/hadv-book/ja.search.min.d973f65f68fa353312d4f1d5d39fdcd77ab2194b24b229affa88d306bc5dc322.js></script><script defer src=/hadv-book/sw.min.4ebe30fc6123bbe10bab7df118e1970fc31c9a92a0d2741967ee6572cb27223d.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/hadv-book/><span>hadv-book</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-10be05eaa2d0f3380454320e18f99b72 class=toggle checked>
-<label for=section-10be05eaa2d0f3380454320e18f99b72 class="flex justify-between"><a href=/hadv-book/docs/usage/>Usage</a></label><ul><li><input type=checkbox id=section-ba4ef7fb0ef6ec372cbd408daf8ee094 class=toggle checked>
-<label for=section-ba4ef7fb0ef6ec372cbd408daf8ee094 class="flex justify-between"><a href=/hadv-book/docs/usage/getting-started/>Getting Started</a></label><ul><li><a href=/hadv-book/docs/usage/getting-started/001-win10/>1. Windows10 の準備</a></li><li><a href=/hadv-book/docs/usage/getting-started/002-wsl2/>2. WSL2 の準備</a></li><li><a href=/hadv-book/docs/usage/getting-started/003-vscode+git/ class=active>3. VSCode と Git の準備</a></li><li><a href=/hadv-book/docs/usage/getting-started/004-create-repo/>4. リポジトリの作成</a></li><li><a href=/hadv-book/docs/usage/getting-started/005-edit-repo/>5. リポジトリの編集</a></li><li><a href=/hadv-book/docs/usage/getting-started/006-build-website/>6. Web サイトのビルド</a></li><li><a href=/hadv-book/docs/usage/getting-started/007-github-pages/>7. Github Pages で公開</a></li></ul></li><li><input type=checkbox id=section-c7a6e30e05563ef23f781365f5a603aa class=toggle>
-<label for=section-c7a6e30e05563ef23f781365f5a603aa class="flex justify-between"><a href=/hadv-book/docs/usage/templates/>Templates</a></label><ul><li><input type=checkbox id=section-a77cb403f31b59fc466778d475cc8fa3 class=toggle>
-<label for=section-a77cb403f31b59fc466778d475cc8fa3 class="flex justify-between"><a href=/hadv-book/docs/usage/templates/minutes/>議事録</a></label><ul><li><a href=/hadv-book/docs/usage/templates/minutes/tplt001-md/>議事録テンプレート.md</a></li></ul></li></ul></li></ul></li><li><input type=checkbox id=section-090e5e9541fbf7abe3678403e1b40824 class=toggle>
-<label for=section-090e5e9541fbf7abe3678403e1b40824 class="flex justify-between"><a href=/hadv-book/docs/example/>Example</a></label><ul><li><a href=/hadv-book/docs/example/asciidoc/>AsciiDoc</a></li><li><input type=checkbox id=section-920f9c2dd946c63cb0f5d07486dfeb76 class=toggle>
-<label for=section-920f9c2dd946c63cb0f5d07486dfeb76 class="flex justify-between"><a href=/hadv-book/docs/example/markdown/>Markdown</a></label><ul><li class=book-section-flat><span>Shortcodes</span><ul><li><a href=/hadv-book/docs/example/markdown/shortcodes/buttons/>Buttons</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/columns/>Columns</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/details/>Details</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/hints/>Hints</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/katex/>KaTeX</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/mermaid/>Mermaid</a></li><li><input type=checkbox id=section-f5b1ac0cefce0032f84e72f3df258ddd class=toggle>
-<label for=section-f5b1ac0cefce0032f84e72f3df258ddd class="flex justify-between"><a href=/hadv-book/docs/example/markdown/shortcodes/section/>Section</a></label><ul><li><a href=/hadv-book/docs/example/markdown/shortcodes/section/page1/>Page 1</a></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/section/page2/>Page 2</a></li></ul></li><li><a href=/hadv-book/docs/example/markdown/shortcodes/tabs/>Tabs</a></li></ul></li></ul></li></ul></li></ul><ul><li><a href=/hadv-book/posts/>Blog</a></li></ul><hr style="margin:1.5em 0"><nav class=recent><strong>Recent Posts</strong><ul><li><span>2021-04-28 22:34:46</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/007-github-pages/>7. Github Pages で公開</a></div></li><li><span>2021-04-28 21:40:01</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/006-build-website/>6. Web サイトのビルド</a></div></li><li><span>2021-04-25 00:40:06</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/005-edit-repo/>5. リポジトリの編集</a></div></li><li><span>2021-04-24 18:29:11</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/004-create-repo/>4. リポジトリの作成</a></div></li><li><span>2021-04-22 22:07:00</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/003-vscode+git/>3. VSCode と Git の準備</a></div></li></ul></nav><hr style="margin:1.5em 0"><nav class=lastmod><strong>Last Modified</strong><ul><li><span>2021-04-29 06:57:51</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/templates/minutes/tplt001-md/>議事録テンプレート.md</a></div></li><li><span>2021-04-29 06:57:51</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/007-github-pages/>7. Github Pages で公開</a></div></li><li><span>2021-04-29 06:57:51</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/006-build-website/>6. Web サイトのビルド</a></div></li><li><span>2021-04-29 06:57:51</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/005-edit-repo/>5. リポジトリの編集</a></div></li><li><span>2021-04-29 06:57:51</span><div><i class="fas fa-angle-double-right"></i>
-<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/004-create-repo/>4. リポジトリの作成</a></div></li></ul></nav></nav><script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/hadv-book/svg/menu.svg class=book-icon alt=Menu></label>
+<!doctype html><html lang=ja dir=ltr>
+<head>
+<meta name=generator content="Hugo 0.86.1">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="VSCode と Git のインストールや設定の参考情報">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="3. VSCode と Git の準備">
+<meta property="og:description" content="VSCode と Git のインストールや設定の参考情報">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/hadv-book/docs/usage/getting-started/003-vscode+git/"><meta property="article:section" content="docs">
+<meta property="article:published_time" content="2021-04-22T22:07:00+09:00">
+<meta property="article:modified_time" content="2021-04-28T21:57:51+00:00">
+<title>3. VSCode と Git の準備 | hadv-book</title>
+<link rel=manifest href=/hadv-book/manifest.json>
+<link rel=icon href=/hadv-book/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/hadv-book/book.min.2485f03bc7f6647725161c896af6b4a809f9ca0dc7ea68a70032d3ff1aaf030d.css>
+<script type=text/javascript src=/hadv-book/tiny_segmenter-0.2.min.3fa816ded8ca2321b4061d4c169697afaa1d32700c69e90323bf828226585534.js></script>
+<script defer src=/hadv-book/flexsearch.min.js></script>
+<script defer src=/hadv-book/ja.search.min.42394606c6941880f1887f2c58286fcc8ef43aa36f4b135eb68621e51cf87a7c.js></script>
+<script defer src=/hadv-book/sw.min.4ebe30fc6123bbe10bab7df118e1970fc31c9a92a0d2741967ee6572cb27223d.js></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a href=/hadv-book/><span>hadv-book</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=検索 aria-label=検索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li>
+<input type=checkbox id=section-10be05eaa2d0f3380454320e18f99b72 class=toggle checked>
+<label for=section-10be05eaa2d0f3380454320e18f99b72 class="flex justify-between">
+<a href=/hadv-book/docs/usage/>Usage</a>
+</label>
+<ul>
+<li>
+<input type=checkbox id=section-ba4ef7fb0ef6ec372cbd408daf8ee094 class=toggle checked>
+<label for=section-ba4ef7fb0ef6ec372cbd408daf8ee094 class="flex justify-between">
+<a href=/hadv-book/docs/usage/getting-started/>Getting Started</a>
+</label>
+<ul>
+<li>
+<a href=/hadv-book/docs/usage/getting-started/001-win10/>1. Windows10 の準備</a>
+</li>
+<li>
+<a href=/hadv-book/docs/usage/getting-started/002-wsl2/>2. WSL2 の準備</a>
+</li>
+<li>
+<a href=/hadv-book/docs/usage/getting-started/003-vscode+git/ class=active>3. VSCode と Git の準備</a>
+</li>
+<li>
+<a href=/hadv-book/docs/usage/getting-started/004-create-repo/>4. リポジトリの作成</a>
+</li>
+<li>
+<a href=/hadv-book/docs/usage/getting-started/005-edit-repo/>5. リポジトリの編集</a>
+</li>
+<li>
+<a href=/hadv-book/docs/usage/getting-started/006-build-website/>6. Web サイトのビルド</a>
+</li>
+<li>
+<a href=/hadv-book/docs/usage/getting-started/007-github-pages/>7. Github Pages で公開</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-c7a6e30e05563ef23f781365f5a603aa class=toggle>
+<label for=section-c7a6e30e05563ef23f781365f5a603aa class="flex justify-between">
+<a href=/hadv-book/docs/usage/templates/>Templates</a>
+</label>
+<ul>
+<li>
+<input type=checkbox id=section-a77cb403f31b59fc466778d475cc8fa3 class=toggle>
+<label for=section-a77cb403f31b59fc466778d475cc8fa3 class="flex justify-between">
+<a href=/hadv-book/docs/usage/templates/minutes/>議事録</a>
+</label>
+<ul>
+<li>
+<a href=/hadv-book/docs/usage/templates/minutes/tplt001-md/>議事録テンプレート.md</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-090e5e9541fbf7abe3678403e1b40824 class=toggle>
+<label for=section-090e5e9541fbf7abe3678403e1b40824 class="flex justify-between">
+<a href=/hadv-book/docs/example/>Example</a>
+</label>
+<ul>
+<li>
+<a href=/hadv-book/docs/example/asciidoc/>AsciiDoc</a>
+</li>
+<li>
+<input type=checkbox id=section-920f9c2dd946c63cb0f5d07486dfeb76 class=toggle>
+<label for=section-920f9c2dd946c63cb0f5d07486dfeb76 class="flex justify-between">
+<a href=/hadv-book/docs/example/markdown/>Markdown</a>
+</label>
+<ul>
+<li class=book-section-flat>
+<span>Shortcodes</span>
+<ul>
+<li>
+<a href=/hadv-book/docs/example/markdown/shortcodes/buttons/>Buttons</a>
+</li>
+<li>
+<a href=/hadv-book/docs/example/markdown/shortcodes/columns/>Columns</a>
+</li>
+<li>
+<a href=/hadv-book/docs/example/markdown/shortcodes/details/>Details</a>
+</li>
+<li>
+<a href=/hadv-book/docs/example/markdown/shortcodes/hints/>Hints</a>
+</li>
+<li>
+<a href=/hadv-book/docs/example/markdown/shortcodes/katex/>KaTeX</a>
+</li>
+<li>
+<a href=/hadv-book/docs/example/markdown/shortcodes/mermaid/>Mermaid</a>
+</li>
+<li>
+<input type=checkbox id=section-f5b1ac0cefce0032f84e72f3df258ddd class=toggle>
+<label for=section-f5b1ac0cefce0032f84e72f3df258ddd class="flex justify-between">
+<a href=/hadv-book/docs/example/markdown/shortcodes/section/>Section</a>
+</label>
+<ul>
+<li>
+<a href=/hadv-book/docs/example/markdown/shortcodes/section/page1/>Page 1</a>
+</li>
+<li>
+<a href=/hadv-book/docs/example/markdown/shortcodes/section/page2/>Page 2</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=/hadv-book/docs/example/markdown/shortcodes/tabs/>Tabs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=/hadv-book/posts/>
+Blog
+</a>
+</li>
+</ul>
+<hr style="margin:1.5em 0">
+<nav class=recent>
+<strong>Recent Posts</strong>
+<ul>
+<li><span>2021-04-28 22:34:46</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/007-github-pages/>7. Github Pages で公開</a>
+</div>
+</li>
+<li><span>2021-04-28 21:40:01</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/006-build-website/>6. Web サイトのビルド</a>
+</div>
+</li>
+<li><span>2021-04-25 00:40:06</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/005-edit-repo/>5. リポジトリの編集</a>
+</div>
+</li>
+<li><span>2021-04-24 18:29:11</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/004-create-repo/>4. リポジトリの作成</a>
+</div>
+</li>
+<li><span>2021-04-22 22:07:00</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/003-vscode+git/>3. VSCode と Git の準備</a>
+</div>
+</li>
+</ul>
+</nav>
+<hr style="margin:1.5em 0">
+<nav class=lastmod>
+<strong>Last Modified</strong>
+<ul>
+<li><span>2021-04-29 06:57:51</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/templates/minutes/tplt001-md/>議事録テンプレート.md</a>
+</div>
+</li>
+<li><span>2021-04-29 06:57:51</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/007-github-pages/>7. Github Pages で公開</a>
+</div>
+</li>
+<li><span>2021-04-29 06:57:51</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/006-build-website/>6. Web サイトのビルド</a>
+</div>
+</li>
+<li><span>2021-04-29 06:57:51</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/005-edit-repo/>5. リポジトリの編集</a>
+</div>
+</li>
+<li><span>2021-04-29 06:57:51</span>
+<div>
+<i class="fas fa-angle-double-right"></i>
+<a class=active style=display:inline href=/hadv-book/docs/usage/getting-started/004-create-repo/>4. リポジトリの作成</a>
+</div>
+</li>
+</ul>
+</nav>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/hadv-book/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>3. VSCode と Git の準備</strong>
-<label for=toc-control><img src=/hadv-book/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><div style="margin:0 0 1em"><strong>Table of Contents</strong></div><nav id=TableOfContents><ul><li><a href=#はじめに>はじめに</a></li><li><a href=#01-vscode-のインストール>01. VSCode のインストール</a><ul><li><a href=#本体のインストール>本体のインストール</a></li><li><a href=#拡張機能のインストール>拡張機能のインストール</a><ul><li><a href=#言語パック日本語>言語パック（日本語）</a></li><li><a href=#必須の拡張機能>必須の拡張機能</a></li><li><a href=#便利な拡張機能>便利な拡張機能</a></li></ul></li></ul></li><li><a href=#02-git-のインストール>02. Git のインストール</a></li></ul></nav><hr style="margin:1.5em 0"><nav><strong>Categories</strong><ul><li class=book-section-flat><ul><li class="flex justify-between"><a href=/hadv-book/categories/example/>example</a>
-<span>3</span></li><li class="flex justify-between"><a href=/hadv-book/categories/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88.md/>テンプレート.md</a>
-<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/>環境構築</a>
-<span>7</span></li></ul></li></ul></nav><hr style="margin:1.5em 0"><nav><strong>Tags</strong><ul><li class=book-section-flat><ul><li class="flex justify-between"><a href=/hadv-book/tags/DevContainer/>DevContainer</a>
-<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Git/>Git</a>
-<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Github/>Github</a>
-<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Hugo/>Hugo</a>
-<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/VSCode/>VSCode</a>
-<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Windows10/>Windows10</a>
-<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/WSL2/>WSL2</a>
-<span>1</span></li></ul></li></ul></nav></aside></header><div class=breadcrumb-shell><ol class=breadcrumb><li><a href=/hadv-book/>HOME</a><li><a href=/hadv-book/docs/usage/>Usage</a><li><a href=/hadv-book/docs/usage/getting-started/>Getting Started</a><li>3. VSCode と Git の準備</ol></div><article class=markdown><h1 id=3-vscode-と-git-の準備>3. VSCode と Git の準備
-<a class=anchor href=#3-vscode-%e3%81%a8-git-%e3%81%ae%e6%ba%96%e5%82%99>#</a></h1><p>ここは 003-vscode+git（content/docs/usage/getting-started/003-vscode+git）です。</p><h2 id=はじめに>はじめに
-<a class=anchor href=#%e3%81%af%e3%81%98%e3%82%81%e3%81%ab>#</a></h2><p>VSCode はインストーラーを使うか、Zip アーカイブを解凍して実行する２つのインストール方法がありますが、どちらでも構いません。
-Git は WSL2 の Ubuntu 20.04 でインストールできますので、今回はその方法を紹介します。</p><h2 id=01-vscode-のインストール>01. VSCode のインストール
-<a class=anchor href=#01-vscode-%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a></h2><h3 id=本体のインストール>本体のインストール
-<a class=anchor href=#%e6%9c%ac%e4%bd%93%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a></h3><p>インストーラーを使ったインストール方法を紹介します。</p><ul><li>使用中の環境に応じた VSCode インストーラーを <a href=https://code.visualstudio.com/download>https://code.visualstudio.com/download</a> からダウンロードします。</li><li>ダウンロードしたら、インストーラー（VSCodeUserSetup- {version} .exe）を実行します。</li></ul><blockquote class="book-hint info">VSCode セットアップに関する詳しい情報は、<br><a href=https://code.visualstudio.com/docs/setup/windows>https://code.visualstudio.com/docs/setup/windows</a>
-にあります。</blockquote><h3 id=拡張機能のインストール>拡張機能のインストール
-<a class=anchor href=#%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bd%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a></h3><p>hadv では VSCode の devcontainer という仕組みを使用するため、必須となる拡張機能があります。<br>ここでは、VSCode にパスが通っていることを前提に、コマンドプロンプトによる簡単なインストール方法を紹介します。</p><blockquote class="book-hint info">VSCode 拡張機能に関する詳しい情報は、<br><a href=https://code.visualstudio.com/docs/editor/extension-marketplace>https://code.visualstudio.com/docs/editor/extension-marketplace</a>
-にあります。</blockquote><h4 id=言語パック日本語>言語パック（日本語）
-<a class=anchor href=#%e8%a8%80%e8%aa%9e%e3%83%91%e3%83%83%e3%82%af%e6%97%a5%e6%9c%ac%e8%aa%9e>#</a></h4><table><thead><tr><th style=text-align:left>名前</th><th style=text-align:left>ID</th><th style=text-align:left>紹介</th></tr></thead><tbody><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja">Japanese Language Pack<br>for Visual Studio Code</a></td><td style=text-align:left>ms-ceintl<br>.vscode-language-pack-ja</td><td style=text-align:left>日本語にローカライズされた UI を提供</td></tr></tbody></table><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bat data-lang=bat>code --install-extension ms-ceintl.vscode-language-pack-ja
-</code></pre></td></tr></table></div></div><h4 id=必須の拡張機能>必須の拡張機能
-<a class=anchor href=#%e5%bf%85%e9%a0%88%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bd>#</a></h4><table><thead><tr><th style=text-align:left>名前</th><th style=text-align:left>ID</th><th style=text-align:left>紹介</th></tr></thead><tbody><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development</a></td><td style=text-align:left>ms-vscode-remote<br>.vscode-remote-extensionpack</td><td style=text-align:left>リモートマシンやコンテナ内のフォルダを開く</td></tr></tbody></table><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bat data-lang=bat>code --install-extension ms-vscode-remote.vscode-remote-extensionpack
-</code></pre></td></tr></table></div></div><h4 id=便利な拡張機能>便利な拡張機能
-<a class=anchor href=#%e4%be%bf%e5%88%a9%e3%81%aa%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bd>#</a></h4><details><summary>必須ではありませんが、あると便利な拡張機能を紹介（クリックで開く）</summary><div class=markdown-inner><table><thead><tr><th style=text-align:left>名前</th><th style=text-align:left>ID</th><th style=text-align:left>紹介</th></tr></thead><tbody><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons</a></td><td style=text-align:left>vscode-icons-team<br>.vscode-icons</td><td style=text-align:left>拡張子ごとにキレイなアイコンを表示</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager">Project Manager</a></td><td style=text-align:left>alefragnani<br>.project-manager</td><td style=text-align:left>複数のプロジェクトの管理</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks">Bookmarks</a></td><td style=text-align:left>alefragnani<br>.bookmarks</td><td style=text-align:left>ファイルに「しおり」を付与</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=xyz.local-history">Local History</a></td><td style=text-align:left>xyz<br>.local-history</td><td style=text-align:left>ファイル編集の履歴を保存</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">Todo Tree</a></td><td style=text-align:left>gruntfuggly<br>.todo-tree</td><td style=text-align:left>コメントタグの TODO などをツリー表示</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">GitLens</a></td><td style=text-align:left>eamodio<br>.gitlens</td><td style=text-align:left>git の情報を表示</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Git Graph</a></td><td style=text-align:left>mhutchie<br>.git-graph</td><td style=text-align:left>git のコミット履歴を表示</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub Pull Requests<br>and Issues</a></td><td style=text-align:left>github<br>.vscode-pull-request-github</td><td style=text-align:left>GitHub 操作</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2">Bracket Pair Colorizer 2</a></td><td style=text-align:left>coenraads<br>.bracket-pair-colorizer-2</td><td style=text-align:left>カッコの対応を色付きで表示</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">indent-rainbow</a></td><td style=text-align:left>oderwat<br>.indent-rainbow</td><td style=text-align:left>インデントを見やすく表示</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=mosapride.zenkaku">zenkaku</a></td><td style=text-align:left>mosapride<br>.zenkaku</td><td style=text-align:left>全角スペースの可視化</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Rainbow CSV</a></td><td style=text-align:left>mechatroner<br>.rainbow-csv</td><td style=text-align:left>CSV, TSV の色分け、簡易クエリ</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer">Excel Viewer</a></td><td style=text-align:left>grapecity<br>.gc-excelviewer</td><td style=text-align:left>CSV を Excel 的に表示</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a></td><td style=text-align:left>streetsidesoftware<br>.code-spell-checker</td><td style=text-align:left>スペルミス表示でタイポを防止</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading">テキスト校正くん</a></td><td style=text-align:left>ics<br>.japanese-proofreading</td><td style=text-align:left>日本語文章校正チェック</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode">Visual Studio IntelliCode</a></td><td style=text-align:left>visualstudioexptteam<br>.vscodeintellicode</td><td style=text-align:left>コード補完の AI サポート</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense">Path Intellisense</a></td><td style=text-align:left>christian-kohler<br>.path-intellisense</td><td style=text-align:left>パス入力をインテリセンスで補完</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">YAML</a></td><td style=text-align:left>redhat<br>.vscode-yaml</td><td style=text-align:left>YAML サポート</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml">XML</a></td><td style=text-align:left>redhat<br>.vscode-xml</td><td style=text-align:left>XML サポート</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=wmaurer.vscode-jumpy">jumpy</a></td><td style=text-align:left>wmaurer<br>.vscode-jumpy</td><td style=text-align:left>カーソル移動を補助</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier</a></td><td style=text-align:left>esbenp<br>.prettier-vscode</td><td style=text-align:left>コードフォーマッター</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines">Sort lines</a></td><td style=text-align:left>tyriar<br>.sort-lines</td><td style=text-align:left>行ソート</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff">Partial Diff</a></td><td style=text-align:left>ryu1kn<br>.partial-diff</td><td style=text-align:left>選択した範囲の差分を表示</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-hexdump">hexdump for VSCode</a></td><td style=text-align:left>slevesque<br>.vscode-hexdump</td><td style=text-align:left>16 進ダンプ表示</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio">Draw.io Integration</a></td><td style=text-align:left>hediet<br>.vscode-drawio</td><td style=text-align:left>Draw.io で図の作成</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=nobuhito.printcode">PrintCode</a></td><td style=text-align:left>nobuhito<br>.printcode</td><td style=text-align:left>コードの印刷サポート</td></tr><tr><td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner</a></td><td style=text-align:left>formulahendry<br>.code-runner</td><td style=text-align:left>選択したコードをその場で実行</td></tr></tbody></table><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+<label for=toc-control>
+<img src=/hadv-book/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<div style="margin:0 0 1em">
+<strong>Table of Contents</strong>
+</div>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#はじめに>はじめに</a></li>
+<li><a href=#01-vscode-のインストール>01. VSCode のインストール</a>
+<ul>
+<li><a href=#本体のインストール>本体のインストール</a></li>
+<li><a href=#拡張機能のインストール>拡張機能のインストール</a>
+<ul>
+<li><a href=#言語パック日本語>言語パック（日本語）</a></li>
+<li><a href=#必須の拡張機能>必須の拡張機能</a></li>
+<li><a href=#便利な拡張機能>便利な拡張機能</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#02-git-のインストール>02. Git のインストール</a></li>
+</ul>
+</nav>
+<hr style="margin:1.5em 0">
+<nav>
+<strong>Categories</strong>
+<ul>
+<li class=book-section-flat>
+<ul>
+<li class="flex justify-between">
+<a href=/hadv-book/categories/example/>example</a>
+<span>3</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/categories/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88.md/>テンプレート.md</a>
+<span>1</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/>環境構築</a>
+<span>7</span>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<hr style="margin:1.5em 0">
+<nav>
+<strong>Tags</strong>
+<ul>
+<li class=book-section-flat>
+<ul>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/DevContainer/>DevContainer</a>
+<span>1</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/Git/>Git</a>
+<span>2</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/Github/>Github</a>
+<span>2</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/Hugo/>Hugo</a>
+<span>2</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/VSCode/>VSCode</a>
+<span>1</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/Windows10/>Windows10</a>
+<span>1</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/WSL2/>WSL2</a>
+<span>1</span>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<div class=breadcrumb-shell>
+<ol class=breadcrumb>
+<li><a href=/hadv-book/>HOME</a>
+<li><a href=/hadv-book/docs/usage/>Usage</a>
+<li><a href=/hadv-book/docs/usage/getting-started/>Getting Started</a>
+<li>3. VSCode と Git の準備
+</ol>
+</div>
+<article class=markdown>
+<h1 id=3-vscode-と-git-の準備>
+3. VSCode と Git の準備
+<a class=anchor href=#3-vscode-%e3%81%a8-git-%e3%81%ae%e6%ba%96%e5%82%99>#</a>
+</h1>
+<p>ここは 003-vscode+git（content/docs/usage/getting-started/003-vscode+git）です。</p>
+<h2 id=はじめに>
+はじめに
+<a class=anchor href=#%e3%81%af%e3%81%98%e3%82%81%e3%81%ab>#</a>
+</h2>
+<p>VSCode はインストーラーを使うか、Zip アーカイブを解凍して実行する２つのインストール方法がありますが、どちらでも構いません。
+Git は WSL2 の Ubuntu 20.04 でインストールできますので、今回はその方法を紹介します。</p>
+<h2 id=01-vscode-のインストール>
+01. VSCode のインストール
+<a class=anchor href=#01-vscode-%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a>
+</h2>
+<h3 id=本体のインストール>
+本体のインストール
+<a class=anchor href=#%e6%9c%ac%e4%bd%93%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a>
+</h3>
+<p>インストーラーを使ったインストール方法を紹介します。</p>
+<ul>
+<li>使用中の環境に応じた VSCode インストーラーを <a href=https://code.visualstudio.com/download>https://code.visualstudio.com/download</a> からダウンロードします。</li>
+<li>ダウンロードしたら、インストーラー（VSCodeUserSetup- {version} .exe）を実行します。</li>
+</ul>
+<blockquote class="book-hint info">
+VSCode セットアップに関する詳しい情報は、<br>
+<a href=https://code.visualstudio.com/docs/setup/windows>https://code.visualstudio.com/docs/setup/windows</a>
+にあります。
+</blockquote>
+<h3 id=拡張機能のインストール>
+拡張機能のインストール
+<a class=anchor href=#%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bd%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a>
+</h3>
+<p>hadv では VSCode の devcontainer という仕組みを使用するため、必須となる拡張機能があります。<br>
+ここでは、VSCode にパスが通っていることを前提に、コマンドプロンプトによる簡単なインストール方法を紹介します。</p>
+<blockquote class="book-hint info">
+VSCode 拡張機能に関する詳しい情報は、<br>
+<a href=https://code.visualstudio.com/docs/editor/extension-marketplace>https://code.visualstudio.com/docs/editor/extension-marketplace</a>
+にあります。
+</blockquote>
+<h4 id=言語パック日本語>
+言語パック（日本語）
+<a class=anchor href=#%e8%a8%80%e8%aa%9e%e3%83%91%e3%83%83%e3%82%af%e6%97%a5%e6%9c%ac%e8%aa%9e>#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>名前</th>
+<th style=text-align:left>ID</th>
+<th style=text-align:left>紹介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja">Japanese Language Pack<br> for Visual Studio Code</a></td>
+<td style=text-align:left>ms-ceintl<br>.vscode-language-pack-ja</td>
+<td style=text-align:left>日本語にローカライズされた UI を提供</td>
+</tr>
+</tbody>
+</table>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bat data-lang=bat>code --install-extension ms-ceintl.vscode-language-pack-ja
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=必須の拡張機能>
+必須の拡張機能
+<a class=anchor href=#%e5%bf%85%e9%a0%88%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bd>#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>名前</th>
+<th style=text-align:left>ID</th>
+<th style=text-align:left>紹介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development</a></td>
+<td style=text-align:left>ms-vscode-remote<br>.vscode-remote-extensionpack</td>
+<td style=text-align:left>リモートマシンやコンテナ内のフォルダを開く</td>
+</tr>
+</tbody>
+</table>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bat data-lang=bat>code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=便利な拡張機能>
+便利な拡張機能
+<a class=anchor href=#%e4%be%bf%e5%88%a9%e3%81%aa%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bd>#</a>
+</h4>
+<details>
+<summary>必須ではありませんが、あると便利な拡張機能を紹介（クリックで開く）</summary>
+<div class=markdown-inner>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>名前</th>
+<th style=text-align:left>ID</th>
+<th style=text-align:left>紹介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons</a></td>
+<td style=text-align:left>vscode-icons-team<br>.vscode-icons</td>
+<td style=text-align:left>拡張子ごとにキレイなアイコンを表示</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager">Project Manager</a></td>
+<td style=text-align:left>alefragnani<br>.project-manager</td>
+<td style=text-align:left>複数のプロジェクトの管理</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks">Bookmarks</a></td>
+<td style=text-align:left>alefragnani<br>.bookmarks</td>
+<td style=text-align:left>ファイルに「しおり」を付与</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=xyz.local-history">Local History</a></td>
+<td style=text-align:left>xyz<br>.local-history</td>
+<td style=text-align:left>ファイル編集の履歴を保存</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">Todo Tree</a></td>
+<td style=text-align:left>gruntfuggly<br>.todo-tree</td>
+<td style=text-align:left>コメントタグの TODO などをツリー表示</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">GitLens</a></td>
+<td style=text-align:left>eamodio<br>.gitlens</td>
+<td style=text-align:left>git の情報を表示</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Git Graph</a></td>
+<td style=text-align:left>mhutchie<br>.git-graph</td>
+<td style=text-align:left>git のコミット履歴を表示</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub Pull Requests<br> and Issues</a></td>
+<td style=text-align:left>github<br>.vscode-pull-request-github</td>
+<td style=text-align:left>GitHub 操作</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2">Bracket Pair Colorizer 2</a></td>
+<td style=text-align:left>coenraads<br>.bracket-pair-colorizer-2</td>
+<td style=text-align:left>カッコの対応を色付きで表示</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">indent-rainbow</a></td>
+<td style=text-align:left>oderwat<br>.indent-rainbow</td>
+<td style=text-align:left>インデントを見やすく表示</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=mosapride.zenkaku">zenkaku</a></td>
+<td style=text-align:left>mosapride<br>.zenkaku</td>
+<td style=text-align:left>全角スペースの可視化</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Rainbow CSV</a></td>
+<td style=text-align:left>mechatroner<br>.rainbow-csv</td>
+<td style=text-align:left>CSV, TSV の色分け、簡易クエリ</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer">Excel Viewer</a></td>
+<td style=text-align:left>grapecity<br>.gc-excelviewer</td>
+<td style=text-align:left>CSV を Excel 的に表示</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a></td>
+<td style=text-align:left>streetsidesoftware<br>.code-spell-checker</td>
+<td style=text-align:left>スペルミス表示でタイポを防止</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading">テキスト校正くん</a></td>
+<td style=text-align:left>ics<br>.japanese-proofreading</td>
+<td style=text-align:left>日本語文章校正チェック</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode">Visual Studio IntelliCode</a></td>
+<td style=text-align:left>visualstudioexptteam<br>.vscodeintellicode</td>
+<td style=text-align:left>コード補完の AI サポート</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense">Path Intellisense</a></td>
+<td style=text-align:left>christian-kohler<br>.path-intellisense</td>
+<td style=text-align:left>パス入力をインテリセンスで補完</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">YAML</a></td>
+<td style=text-align:left>redhat<br>.vscode-yaml</td>
+<td style=text-align:left>YAML サポート</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml">XML</a></td>
+<td style=text-align:left>redhat<br>.vscode-xml</td>
+<td style=text-align:left>XML サポート</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=wmaurer.vscode-jumpy">jumpy</a></td>
+<td style=text-align:left>wmaurer<br>.vscode-jumpy</td>
+<td style=text-align:left>カーソル移動を補助</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier</a></td>
+<td style=text-align:left>esbenp<br>.prettier-vscode</td>
+<td style=text-align:left>コードフォーマッター</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines">Sort lines</a></td>
+<td style=text-align:left>tyriar<br>.sort-lines</td>
+<td style=text-align:left>行ソート</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff">Partial Diff</a></td>
+<td style=text-align:left>ryu1kn<br>.partial-diff</td>
+<td style=text-align:left>選択した範囲の差分を表示</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-hexdump">hexdump for VSCode</a></td>
+<td style=text-align:left>slevesque<br>.vscode-hexdump</td>
+<td style=text-align:left>16 進ダンプ表示</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio">Draw.io Integration</a></td>
+<td style=text-align:left>hediet<br>.vscode-drawio</td>
+<td style=text-align:left>Draw.io で図の作成</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=nobuhito.printcode">PrintCode</a></td>
+<td style=text-align:left>nobuhito<br>.printcode</td>
+<td style=text-align:left>コードの印刷サポート</td>
+</tr>
+<tr>
+<td style=text-align:left><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner</a></td>
+<td style=text-align:left>formulahendry<br>.code-runner</td>
+<td style=text-align:left>選択したコードをその場で実行</td>
+</tr>
+</tbody>
+</table>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
@@ -70,7 +617,9 @@ Git は WSL2 の Ubuntu 20.04 でインストールできますので、今回�
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bat data-lang=bat>code --install-extension vscode-icons-team.vscode-icons
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bat data-lang=bat>code --install-extension vscode-icons-team.vscode-icons
 code --install-extension alefragnani.project-manager
 code --install-extension alefragnani.bookmarks
 code --install-extension xyz.local-history
@@ -97,7 +646,12 @@ code --install-extension slevesque.vscode-hexdump
 code --install-extension hediet.vscode-drawio
 code --install-extension nobuhito.printcode
 code --install-extension formulahendry.code-runner
-</code></pre></td></tr></table></div></div><h5 id=設定サンプルvscode---settingsjson>設定サンプル（VSCode - settings.json）</h5><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</code></pre></td></tr></table>
+</div>
+</div><h5 id=設定サンプルvscode---settingsjson>設定サンプル（VSCode - settings.json）</h5>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
@@ -142,7 +696,9 @@ code --install-extension formulahendry.code-runner
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
   <span style=color:#f92672>&#34;window.zoomLevel&#34;</span>: <span style=color:#ae81ff>-1</span>,
   <span style=color:#f92672>&#34;window.title&#34;</span>: <span style=color:#e6db74>&#34;${dirty}${activeEditorMedium}${separator}${rootName}&#34;</span>,
   <span style=color:#f92672>&#34;editor.minimap.side&#34;</span>: <span style=color:#e6db74>&#34;left&#34;</span>,
@@ -187,19 +743,130 @@ code --install-extension formulahendry.code-runner
   <span style=color:#f92672>&#34;code-runner.runInTerminal&#34;</span>: <span style=color:#66d9ef>true</span>,
   <span style=color:#f92672>&#34;code-runner.clearPreviousOutput&#34;</span>: <span style=color:#66d9ef>true</span>,
 }
-</code></pre></td></tr></table></div></div></div></details><h2 id=02-git-のインストール>02. Git のインストール
-<a class=anchor href=#02-git-%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a></h2><p>WSL2 の Ubuntu 20.04 コンソール画面を開き、以下を実行します。</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install git
-</code></pre></td></tr></table></div></div><blockquote class="book-hint info">WSL2 への Git インストールに関する詳しい情報は、<br><a href=https://docs.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-git>https://docs.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-git</a>
-にあります。</blockquote></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/H16K148/hadv-book/commit/a9d7ea76efb7ece0d3a45825afb014b2ae9bbb1d title="最終更新者 H16K148 | 2021-04-29" target=_blank rel=noopener><img src=/hadv-book/svg/calendar.svg class=book-icon alt=Calendar>
-<span>2021-04-29</span></a></div></div><script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><div style="margin:0 0 1em"><strong>Table of Contents</strong></div><nav id=TableOfContents><ul><li><a href=#はじめに>はじめに</a></li><li><a href=#01-vscode-のインストール>01. VSCode のインストール</a><ul><li><a href=#本体のインストール>本体のインストール</a></li><li><a href=#拡張機能のインストール>拡張機能のインストール</a><ul><li><a href=#言語パック日本語>言語パック（日本語）</a></li><li><a href=#必須の拡張機能>必須の拡張機能</a></li><li><a href=#便利な拡張機能>便利な拡張機能</a></li></ul></li></ul></li><li><a href=#02-git-のインストール>02. Git のインストール</a></li></ul></nav><hr style="margin:1.5em 0"><nav><strong>Categories</strong><ul><li class=book-section-flat><ul><li class="flex justify-between"><a href=/hadv-book/categories/example/>example</a>
-<span>3</span></li><li class="flex justify-between"><a href=/hadv-book/categories/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88.md/>テンプレート.md</a>
-<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/>環境構築</a>
-<span>7</span></li></ul></li></ul></nav><hr style="margin:1.5em 0"><nav><strong>Tags</strong><ul><li class=book-section-flat><ul><li class="flex justify-between"><a href=/hadv-book/tags/DevContainer/>DevContainer</a>
-<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Git/>Git</a>
-<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Github/>Github</a>
-<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Hugo/>Hugo</a>
-<span>2</span></li><li class="flex justify-between"><a href=/hadv-book/tags/VSCode/>VSCode</a>
-<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/Windows10/>Windows10</a>
-<span>1</span></li><li class="flex justify-between"><a href=/hadv-book/tags/WSL2/>WSL2</a>
-<span>1</span></li></ul></li></ul></nav></div></aside></main><footer><div class=copyright>Copyright &#169; 2021 <a href=https://h16k148.github.io>H16K148</a>. All Rights Reserved.</div></footer></body></html>
+</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</details>
+<h2 id=02-git-のインストール>
+02. Git のインストール
+<a class=anchor href=#02-git-%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab>#</a>
+</h2>
+<p>WSL2 の Ubuntu 20.04 コンソール画面を開き、以下を実行します。</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install git
+</code></pre></td></tr></table>
+</div>
+</div><blockquote class="book-hint info">
+WSL2 への Git インストールに関する詳しい情報は、<br>
+<a href=https://docs.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-git>https://docs.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-git</a>
+にあります。
+</blockquote>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div><a class="flex align-center" href=https://github.com/H16K148/hadv-book/commit/a9d7ea76efb7ece0d3a45825afb014b2ae9bbb1d title="最終更新者 H16K148 | 2021-04-29" target=_blank rel=noopener>
+<img src=/hadv-book/svg/calendar.svg class=book-icon alt=Calendar>
+<span>2021-04-29</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<div style="margin:0 0 1em">
+<strong>Table of Contents</strong>
+</div>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#はじめに>はじめに</a></li>
+<li><a href=#01-vscode-のインストール>01. VSCode のインストール</a>
+<ul>
+<li><a href=#本体のインストール>本体のインストール</a></li>
+<li><a href=#拡張機能のインストール>拡張機能のインストール</a>
+<ul>
+<li><a href=#言語パック日本語>言語パック（日本語）</a></li>
+<li><a href=#必須の拡張機能>必須の拡張機能</a></li>
+<li><a href=#便利な拡張機能>便利な拡張機能</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#02-git-のインストール>02. Git のインストール</a></li>
+</ul>
+</nav>
+<hr style="margin:1.5em 0">
+<nav>
+<strong>Categories</strong>
+<ul>
+<li class=book-section-flat>
+<ul>
+<li class="flex justify-between">
+<a href=/hadv-book/categories/example/>example</a>
+<span>3</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/categories/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88.md/>テンプレート.md</a>
+<span>1</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/categories/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/>環境構築</a>
+<span>7</span>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<hr style="margin:1.5em 0">
+<nav>
+<strong>Tags</strong>
+<ul>
+<li class=book-section-flat>
+<ul>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/DevContainer/>DevContainer</a>
+<span>1</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/Git/>Git</a>
+<span>2</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/Github/>Github</a>
+<span>2</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/Hugo/>Hugo</a>
+<span>2</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/VSCode/>VSCode</a>
+<span>1</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/Windows10/>Windows10</a>
+<span>1</span>
+</li>
+<li class="flex justify-between">
+<a href=/hadv-book/tags/WSL2/>WSL2</a>
+<span>1</span>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+<footer>
+<div class=copyright>Copyright &#169; 2021 <a href=https://h16k148.github.io>H16K148</a>. All Rights Reserved.</div>
+</footer>
+</body>
+</html>
