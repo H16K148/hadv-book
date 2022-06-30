@@ -12,21 +12,21 @@
 #    以降の無視指定に上書きされうる
 
 # 追加
-/.asciidoctor/
+#/.asciidoctor/
 /.history/
 /.logs/
-/docs/*
+#/docs/*
 /pdf/*
-/work/*
-/resources/
-/content/**/.asciidoctor/
-/content/**/images/diagrams/*.svg
+#/work/*
+#/resources/
+#/content/**/.asciidoctor/
+#/content/**/images/diagrams/*.svg
 #/asciidoc/**/fonts/
 
-/content/docs/usage/sandbox/*
-!/content/docs/usage/sandbox/_index.md
+#/content/docs/usage/sandbox/*
+#!/content/docs/usage/sandbox/_index.md
 
-/content/posts/sandbox/*
+#/content/posts/sandbox/*
 
-.hugo_build.lock
+#.hugo_build.lock
 !.gitkeep
