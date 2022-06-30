@@ -5,23 +5,29 @@
     {{ if gt $tmpPageCount 0 }}
       {{ if $tmpNotFirstTaxonomy }}
 <hr style="margin: 1.5em 0px;">
+<details>
+      {{ else }}
+<details open>
       {{ end }}
       {{ $tmpNotFirstTaxonomy = true }}
-<nav>
-  <strong>{{ .Title | title }}</strong>
-  <ul>
-    <li class="book-section-flat">
-      <ul>
-      {{ range .Pages.ByTitle }}
-        <li class="flex justify-between">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <span>{{ len .Pages }}</span>
-        </li>
-      {{ end }}
-      </ul>
-    </li>
-  </ul>
-</nav>
+  <summary style="font-weight: bold;">{{ .Title | title }}</summary>
+  <nav>
+    <ul>
+      <li class="book-section-flat">
+        <ul>
+        {{ range .Pages.ByTitle }}
+          <li class="flex justify-between">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span>{{ len .Pages }}</span>
+          </li>
+        {{ end }}
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</details>
     {{ end }}
   {{ end }}
 {{ end }}
+
+<hr style="margin: 1.5em 0px;">

@@ -1,0 +1,28 @@
+ifeval::["{backend}{ssg}" == "html5hugo"]
+:imagesdir: ./images/diagrams
+endif::[]
+ifeval::["{backend}{ssg}" != "html5hugo"]
+:imagesdir: {docdir}/images/diagrams
+endif::[]
+:diagram-cachedir: {docdir}/.asciidoctor/diagrams
+
+.ここを編集します
+[plantuml,{{ replace .Name ".adoc" "" }},svg]
+....
+@startuml
+
+actor User
+
+note right of User
+  編集してください。
+end note
+
+@enduml
+....
+
+ifeval::["{backend}{ssg}" == "html5hugo"]
+:imagesdir: ./images
+endif::[]
+ifeval::["{backend}{ssg}" != "html5hugo"]
+:imagesdir: {docdir}/images
+endif::[]

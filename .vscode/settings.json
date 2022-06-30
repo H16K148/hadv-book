@@ -5,5 +5,11 @@
   "asciidoc.use_asciidoctor_js": false,
   "asciidoc.use_asciidoctorpdf": true,
   "asciidoc.preview.useEditorStyle": false,
-  "asciidoc.trace": "verbose"
+  "asciidoc.trace": "verbose",
+  "markdownlint.config": {
+    "MD028": false,
+    "MD025": {
+      "front_matter_title": ""
+    }
+  }
 }

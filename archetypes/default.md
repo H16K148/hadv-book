@@ -4,14 +4,14 @@
 #aliases:       # Set on each page
 #audio:         # Set on each page
 date: '{{ .Date }}'
-#description:   # Set on each page
+description: "（要編集）ページ・コンテンツの概要を記述します"
 draft: true
 #expiryDate:    # Set on each page 
 #headless:      # Set on each page
 #images:        # Set on each page
 isCJKLanguage: true
-keywords:
-  - hadv
+#keywords:
+#  - hadv
 #layout:        # Set on each page
 #lastmod:       # Set on each page
 #linkTitle:     # Set on each page
@@ -21,15 +21,19 @@ keywords:
 #resources:     # Set on each page
 #series:        # Set on each page
 #slug:          # Set on each page
-#summary:       # Set on each page
+summary: "（要編集）ページ・コンテンツのサマリーを記述します"
 title: '{{ replace .Name "-" " " | title }}'
 type: 'docs'
 #url:           # Set on each page
 #videos:        # Set on each page
 #weight:        # Set on each page
 ## <taxonomies>
+authors: ["（要編集）ナナシ"]
 categories: []
-tags: []
+#tags: []
+products: []
+projects: []
+#series: []
 ###### Hugo Book Theme Defined
 ###### https://themes.gohugo.io/hugo-book/
 ## See /content/docs/_index.md
@@ -47,3 +51,4 @@ tags: []
 #bookSearchExclude: true
 ---
 
+## ページ・コンテンツ

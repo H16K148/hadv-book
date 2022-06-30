@@ -4,14 +4,14 @@
 #aliases:       # Set on each page
 #audio:         # Set on each page
 date: '{{ .Date }}'
-#description:   # Set on each page
+description: "（要編集）ページ・コンテンツの概要を記述します"
 draft: true
 #expiryDate:    # Set on each page 
 #headless:      # Set on each page
 #images:        # Set on each page
 isCJKLanguage: true
-keywords:
-  - hadv
+#keywords:
+#  - hadv
 #layout:        # Set on each page
 #lastmod:       # Set on each page
 #linkTitle:     # Set on each page
@@ -21,15 +21,19 @@ keywords:
 #resources:     # Set on each page
 #series:        # Set on each page
 #slug:          # Set on each page
-#summary:       # Set on each page
+summary: "（要編集）ページ・コンテンツのサマリーを記述します"
 title: '{{ replace .Name "-" " " | title }}'
 type: 'docs'
 #url:           # Set on each page
 #videos:        # Set on each page
 #weight:        # Set on each page
 ## <taxonomies>
+authors: ["（要編集）ナナシ"]
 categories: []
-tags: []
+#tags: []
+products: []
+projects: []
+#series: []
 ###### Hugo Book Theme Defined
 ###### https://themes.gohugo.io/hugo-book/
 ## See /content/docs/_index.md
@@ -49,25 +53,26 @@ tags: []
 // 各種パスの設定 //
 // for html5 (Hugo)
 ifeval::["{backend}{ssg}" == "html5hugo"]
+:imagesdir: ./images
 :icons: font
-:imagesdir: ./
 :source-highlighter: rouge
 :rouge-css: style
 :rouge-style: pastie
 endif::[]
 // for html5 Preview (VSCode Preview)
 ifeval::["{backend}{ssg}" == "html5"]
+:imagesdir: {docdir}/images
 :stylesdir: /documents/asciidoctor/html/theme-business-001/styles
 :stylesheet: adoc-colony.css
 :icons: font
-:imagesdir: ./
-:source-highlighter: rouge
-:rouge-css: style
-:rouge-style: pastie
+:source-highlighter: pygments
+:pygments-css: class
+:pygments-style: pastie
+:pygments-linenums-mode: inline
 endif::[]
 // for pdf
 ifeval::["{backend}" == "pdf"]
-:imagesdir: ./
+:imagesdir: {docdir}/images
 :source-highlighter: rouge
 :rouge-style: pastie
 :doctype: book
@@ -89,6 +94,7 @@ endif::[]
 :listing-caption: リスト
 // その他設定 //
 :experimental:
+:prewrap!:
 // 文書のステータス //
 :localdate: 2021-02-18
 :revnumber: 0.0.1
@@ -97,13 +103,13 @@ endif::[]
 // for html5
 ifeval::["{backend}" == "html5"]
 :showtitle:
-= タイトル
-H16K148 <h16k148@gmail.com>
+= ページ・コンテンツ
+xxx <xxx@jijilla.jp>
 endif::[]
 // for pdf
 ifeval::["{backend}" == "pdf"]
-= タイトル
-H16K148 <h16k148@gmail.com>
+= ページ・コンテンツ
+xxx <xxx@jijilla.jp>
 endif::[]
 
 :sectnums!:
@@ -113,3 +119,6 @@ endif::[]
 
 :sectnums:
 == 第１章
+
+:sectnums!:
+== おわりに

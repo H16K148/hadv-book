@@ -4,7 +4,12 @@
   "service": "hadv-asciidoctor-sv",
   "workspaceFolder": "/documents",
   "settings": { 
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.profiles.linux": {
+      "bash (login)": {
+          "path": "bash",
+          "args": ["-l"]
+      }
+    },
   },
   "extensions": [
     "asciidoctor.asciidoctor-vscode",
@@ -18,7 +23,8 @@
     "visualstudioexptteam.vscodeintellicode",
     "ics.japanese-proofreading",
     "jebbs.plantuml",
-    "yog.yog-plantuml-highlight"
+    "yog.yog-plantuml-highlight",
+    "docsmsft.docs-authoring-pack"
   ],
   "initializeCommand":[
     "docker",

@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  hadv-staging-site:
+    container_name: ${HADV_NAME_PREFIX}-hadv-httpd
+    image: httpd:alpine
+    tty: true
+    init: true
+    volumes:
+      - ../docs:/usr/local/apache2/htdocs/${HADV_URL_SUBDIRECTORY}
+    ports:
+      - "${HADV_STAGING_PORT}:80"
+  hadv-asciidoctor-sv:
+    container_name: ${HADV_NAME_PREFIX}-hadv-asciidoctor
+    image: h16k148/hadv-asciidoctor:latest
+    tty: true
+    init: true
+    build: 
+      context: ./hadv-asciidoctor
+      dockerfile: Dockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ..:/documents
+    env_file:
+      - .env

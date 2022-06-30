@@ -226,8 +226,8 @@ verboseLog = true
   BookServiceWorker = true
   ##### User-Define Configuration
   ## サイドバーの Recent Posts の数（1～）
-  SidebarRecentLimit = 5
+  SidebarRecentLimit = 7
   ## サイドバーの Last Modified の数（1～）
-  SidebarLastmodifiedLimit = 5
+  SidebarLastmodifiedLimit = 7
   ## フッターの Copyright 表記
   CopyrightHTML = "Copyright &#xA9; 2021 <a href=\"https://h16k148.github.io\">H16K148</a>. All Rights Reserved."

@@ -27,8 +27,9 @@
 }
 .markdown h2 {
   background-color: #f3f3f3;
+  border-left: solid 10px #ddd;
   border-bottom: solid 1px #ddd;
-  padding: 0.20em 0.5em;
+  padding: 0.25em 0.2em 0.20em;
 }
 .markdown h3 {
   position: relative;
@@ -95,4 +96,12 @@ aside nav ul li {
       display: block;
     }
   }
+}
+
+aside.book-toc nav#TableOfContents ul li a {
+  color: #9da5de;
+}
+
+aside.book-toc nav#TableOfContents ul li.active a {
+  color: #0055bb;
 }
