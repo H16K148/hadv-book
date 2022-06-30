@@ -52,10 +52,13 @@ window.addEventListener('DOMContentLoaded', () => {
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const id = entry.target.getAttribute('id');
-    if (entry.intersectionRatio > 0) {
-      document.querySelector(`aside.book-toc nav#TableOfContents li a[href="#${id}"]`).parentElement.classList.add('active');
-    } else {
-      document.querySelector(`aside.book-toc nav#TableOfContents li a[href="#${id}"]`).parentElement.classList.remove('active');
+    const tmp_element = document.querySelector(`aside.book-toc nav#TableOfContents li a[href="#${id}"]`)
+    if (tmp_element != null) {
+      if (entry.intersectionRatio > 0) {
+        tmp_element.parentElement.classList.add('active');
+      } else {
+        tmp_element.parentElement.classList.remove('active');
+      }
     }
   });
 });
